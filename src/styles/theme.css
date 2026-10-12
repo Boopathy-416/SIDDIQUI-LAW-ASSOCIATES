@@ -1,0 +1,13 @@
+:root {
+  --color-navy: #0a192f;
+  --color-deep-navy: #07111f;
+
+  --color-gold: #c5a880;
+  --color-luxury-gold: #d4af37;
+
+  --color-slate: #64748b;
+  --color-off-white: #f5f3ef;
+  --color-white: #ffffff;
+
+  --container-width: 1440px;
+}
