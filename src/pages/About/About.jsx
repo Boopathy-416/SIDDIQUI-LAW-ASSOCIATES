@@ -1,18 +1,18 @@
 import SEO from "../../components/seo/Seo.jsx";
 
 
-function About() {
+function TheFirm() {
   return (
     <>
       <SEO
-        title="About"
-        description="[INSERT VERIFIED ABOUT PAGE META DESCRIPTION]"
-        canonical="/about"
+        title="The Firm"
+        description="[INSERT VERIFIED THE FIRM PAGE META DESCRIPTION]"
+        canonical="/the-firm"
       />
 
       <section className="mx-auto max-w-[1440px] px-6 py-32 lg:px-10">
         <p className="text-sm uppercase tracking-[0.3em] text-[#C5A880]">
-          About
+          The Firm
         </p>
 
         <h1 className="mt-5 text-5xl font-light">
@@ -27,4 +27,4 @@ function About() {
   );
 }
 
-export default About;
+export default TheFirm;

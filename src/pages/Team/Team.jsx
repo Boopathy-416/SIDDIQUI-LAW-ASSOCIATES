@@ -1,12 +1,12 @@
 import SEO from "../../components/seo/Seo";
 
-function Team() {
+function OurTeam() {
   return (
     <>
       <SEO
         title="Our Team"
         description="[INSERT VERIFIED TEAM PAGE META DESCRIPTION]"
-        canonical="/team"
+        canonical="/our-team"
       />
 
       <section className="mx-auto max-w-[1440px] px-6 py-32 lg:px-10">
@@ -26,4 +26,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default OurTeam;

@@ -1,12 +1,12 @@
 import SEO from "../../components/seo/Seo.jsx";
 
-function PracticeAreas() {
+function OurExpertise() {
   return (
     <>
       <SEO
-        title="Practice Areas"
-        description="[INSERT VERIFIED PRACTICE AREAS META DESCRIPTION]"
-        canonical="/practice-areas"
+        title="Our Expertise"
+        description="[INSERT VERIFIED OUR EXPERTISE META DESCRIPTION]"
+        canonical="/our-expertise"
       />
 
       <section className="mx-auto max-w-[1440px] px-6 py-32 lg:px-10">
@@ -15,7 +15,7 @@ function PracticeAreas() {
         </p>
 
         <h1 className="mt-5 text-5xl font-light">
-          Practice Areas
+          Our Expertise
         </h1>
 
         <p className="mt-8 max-w-3xl leading-8 text-slate-400">
@@ -26,4 +26,4 @@ function PracticeAreas() {
   );
 }
 
-export default PracticeAreas;
+export default OurExpertise;

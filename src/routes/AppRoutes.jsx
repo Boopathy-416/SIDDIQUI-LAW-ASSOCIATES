@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/Home/Home";
-import About from "../pages/About/About";
-import PracticeAreas from "../pages/PracticeAreas/PracticeAreas";
-import Team from "../pages/Team/Team";
+import TheFirm from "../pages/About/About";
+import OurExpertise from "../pages/PracticeAreas/PracticeAreas";
+import OurTeam from "../pages/Team/Team";
 import Insights from "../pages/Insights/Insights";
 import Contact from "../pages/Contact/Contact";
 import NotFound from "../pages/NotFound/NotFound";
@@ -16,14 +16,14 @@ function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
 
-        <Route path="/about" element={<About />} />
+        <Route path="/the-firm" element={<TheFirm />} />
 
         <Route
-          path="/practice-areas"
-          element={<PracticeAreas />}
+          path="/our-expertise"
+          element={<OurExpertise />}
         />
 
-        <Route path="/team" element={<Team />} />
+        <Route path="/our-team" element={<OurTeam />} />
 
         <Route path="/insights" element={<Insights />} />
 
