@@ -9,6 +9,7 @@ import OurTeam from "../pages/Team/Team";
 import Insights from "../pages/Insights/Insights";
 import Contact from "../pages/Contact/Contact";
 import NotFound from "../pages/NotFound/NotFound";
+import ArticleDetails from "../pages/Insights/ArticleDetails";
 
 function AppRoutes() {
   return (
@@ -26,6 +27,7 @@ function AppRoutes() {
         <Route path="/our-team" element={<OurTeam />} />
 
         <Route path="/insights" element={<Insights />} />
+        <Route path="/insights/:slug" element={<ArticleDetails />} />
 
         <Route path="/contact" element={<Contact />} />
 
