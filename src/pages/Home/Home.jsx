@@ -106,18 +106,8 @@ const practices = [
     "Corporate & Commercial Law",
     "Legal guidance for companies and commercial matters.",
   ],
-  [
-    "Constitutional Law & Writs",
-    "Legal representation in constitutional matters and writ proceedings.",
-  ],
-  [
-    "General Litigation",
-    "Representation in litigation before courts and tribunals.",
-  ],
-  [
-    "Intellectual Property Rights (IPR)",
-    "Legal assistance concerning intellectual property rights.",
-  ],
+
+
   [
     "Real Estate & Property Law",
     "Legal support for property matters and disputes.",
@@ -138,26 +128,7 @@ const practices = [
     "Technology, Media & Telecommunications (TMT)",
     "Legal support for technology, media and telecommunications matters.",
   ],
-  [
-    "Environmental Law",
-    "Legal assistance concerning environmental matters.",
-  ],
-  [
-    "Competition Law",
-    "Legal guidance on competition-related matters.",
-  ],
-  [
-    "Consumer Laws",
-    "Legal assistance relating to consumer rights and disputes.",
-  ],
-  [
-    "Medical Negligence",
-    "Legal assistance in matters involving alleged medical negligence.",
-  ],
-  [
-    "Corporate Advisory & Due Diligence",
-    "Legal review and advisory support for corporate matters.",
-  ],
+
 ];
 
 const team = [
@@ -443,7 +414,7 @@ function HomeExpertise() {
             to="/our-expertise"
             className="group inline-flex items-center gap-3 self-start border-b border-white/30 pb-2 text-sm text-white transition hover:border-[#d4bd91] hover:text-[#d4bd91] sm:self-auto"
           >
-            Explore all practices
+            Explore all practices Read More..
             <ArrowRight
               size={17}
               className="transition-transform group-hover:translate-x-1"

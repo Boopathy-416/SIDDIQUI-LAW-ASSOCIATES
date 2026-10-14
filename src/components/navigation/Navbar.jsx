@@ -118,6 +118,7 @@ function Nav() {
     setOpen(false);
     setExpertise(false);
     setSearchOpen(false);
+    setSearchQuery("");
   };
 
   const linkStyle = (active = false) =>
@@ -195,7 +196,7 @@ function Nav() {
                 {practices.slice(0, 6).map(([name]) => (
                   <Link
                     key={name}
-                    to={`/expertise/${slugify(name)}`}
+                    to={`/our-expertise/${slugify(name)}`}
                     onClick={closeMenus}
                     className="flex items-center justify-between gap-3 px-5 py-3 text-sm text-white/75 transition-colors hover:bg-white/5 hover:text-[#C5A880]"
                   >
@@ -324,17 +325,18 @@ function Nav() {
 
             {searchQuery.trim() && (
               <div className="mt-3 max-h-64 overflow-y-auto">
-                {filteredPractices.length ? (
+                {filteredPractices.length > 0 ? (
                   filteredPractices.map(([name, description]) => (
                     <Link
                       key={name}
-                      to={`/expertise/${slugify(name)}`}
+                      to={`/our-expertise/${slugify(name)}`}
                       onClick={closeMenus}
                       className="block border-b border-white/10 py-3"
                     >
                       <span className="block text-sm text-white hover:text-[#C5A880]">
                         {name}
                       </span>
+
                       <span className="mt-1 block text-xs leading-relaxed text-white/50">
                         {description}
                       </span>
@@ -387,7 +389,7 @@ function Nav() {
                 {practices.map(([name]) => (
                   <Link
                     key={name}
-                    to={`/expertise/${slugify(name)}`}
+                    to={`/our-expertise/${slugify(name)}`}
                     onClick={closeMenus}
                     className="flex items-center gap-2 py-3 pr-2 text-sm text-white/65 hover:text-[#C5A880]"
                   >
@@ -441,69 +443,5 @@ function Nav() {
   );
 }
 
-// Keep the article data available for your existing Insights page.
 export { practices, articles, slugify };
 export default Nav;
-
-// import { NavLink } from "react-router-dom";
-
-// const navigation = [
-//   {
-//     label: "The Firm",
-//     path: "/the-firm",
-//   },
-//   {
-//     label: "Our Expertise",
-//     path: "/our-expertise",
-//   },
-//   {
-//     label: "Insights",
-//     path: "/insights",
-//   },
-//   {
-//     label: "Our Team",
-//     path: "/our-team",
-//   },
-// ];
-
-// function Navbar() {
-//   return (
-//     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111F]/95 backdrop-blur">
-//       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 lg:px-10">
-//         <NavLink
-//           to="/"
-//           className="text-xl font-medium tracking-wide text-[#C5A880]"
-//         >
-//           LAW FIRM
-//         </NavLink>
-
-//         <nav className="hidden items-center gap-8 md:flex">
-//           {navigation.map((item) => (
-//             <NavLink
-//               key={item.path}
-//               to={item.path}
-//               className={({ isActive }) =>
-//                 `text-sm transition-colors ${
-//                   isActive
-//                     ? "text-[#D4AF37]"
-//                     : "text-slate-300 hover:text-white"
-//                 }`
-//               }
-//             >
-//               {item.label}
-//             </NavLink>
-//           ))}
-//         </nav>
-
-//         <NavLink
-//           to="/contact"
-//           className="hidden border border-[#C5A880] px-5 py-3 text-sm text-[#C5A880] transition hover:bg-[#C5A880] hover:text-[#07111F] md:block"
-//         >
-//           Consultation
-//         </NavLink>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Navbar;

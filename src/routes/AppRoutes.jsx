@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
@@ -24,10 +25,18 @@ function AppRoutes() {
           element={<OurExpertise />}
         />
 
+        <Route
+          path="/our-expertise/:slug"
+          element={<OurExpertise />}
+        />
+
         <Route path="/our-team" element={<OurTeam />} />
 
         <Route path="/insights" element={<Insights />} />
-        <Route path="/insights/:slug" element={<ArticleDetails />} />
+        <Route
+          path="/insights/:slug"
+          element={<ArticleDetails />}
+        />
 
         <Route path="/contact" element={<Contact />} />
 
