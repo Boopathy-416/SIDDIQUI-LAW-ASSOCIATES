@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -7,34 +6,74 @@ import {
   ChevronRight,
   Menu,
   X,
-  Scale,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
   Search,
-  Check,
-  ArrowLeft,
 } from "lucide-react";
-import logo from "../../../public/Assets/fg.svg";
 
 const practices = [
-  ["Arbitration & Dispute Resolution", "Resolving complex commercial disputes with clarity, strategy and discretion."],
-  ["Criminal Law & White Collar Crime", "Strategic counsel for high-stakes investigations and criminal proceedings."],
-  ["Corporate & Commercial Law", "Practical advice for ambitious businesses navigating growth and change."],
-  ["Constitutional Law & Writs", "Protecting rights and challenging executive action through constitutional remedies."],
-  ["General Litigation", "Measured, prepared representation across civil courts and tribunals."],
-  ["Intellectual Property Rights (IPR)", "Helping ideas, brands and creative work stay protected and valuable."],
-  ["Real Estate & Property Law", "Confident counsel for transactions, development and property disputes."],
-  ["Employment & Labour Law", "Building fair, resilient workplaces and resolving employment challenges."],
-  ["Banking & Finance", "Guidance on lending, securities, regulation and financial transactions."],
-  ["Family & Matrimonial Law", "Thoughtful support through deeply personal legal matters."],
-  ["Technology, Media & Telecommunications (TMT)", "Forward-looking counsel for fast-moving digital industries."],
-  ["Environmental Law", "Navigating regulation and responsibility in a changing world."],
-  ["Competition Law", "Advising businesses on fair markets, conduct and regulatory review."],
-  ["Consumer Law", "Clear representation for consumer rights and business compliance."],
-  ["Medical Negligence", "Careful advocacy in matters where trust and accountability matter."],
-  ["Corporate Advisory & Due Diligence", "Insightful review for informed decisions and sustainable growth."],
+  [
+    "Arbitration & Dispute Resolution",
+    "Resolving complex commercial disputes with clarity, strategy and discretion.",
+  ],
+  [
+    "Criminal Law & White Collar Crime",
+    "Strategic counsel for high-stakes investigations and criminal proceedings.",
+  ],
+  [
+    "Corporate & Commercial Law",
+    "Practical advice for ambitious businesses navigating growth and change.",
+  ],
+  [
+    "Constitutional Law & Writs",
+    "Protecting rights and challenging executive action through constitutional remedies.",
+  ],
+  [
+    "General Litigation",
+    "Measured, prepared representation across civil courts and tribunals.",
+  ],
+  [
+    "Intellectual Property Rights (IPR)",
+    "Helping ideas, brands and creative work stay protected and valuable.",
+  ],
+  [
+    "Real Estate & Property Law",
+    "Confident counsel for transactions, development and property disputes.",
+  ],
+  [
+    "Employment & Labour Law",
+    "Building fair, resilient workplaces and resolving employment challenges.",
+  ],
+  [
+    "Banking & Finance",
+    "Guidance on lending, securities, regulation and financial transactions.",
+  ],
+  [
+    "Family & Matrimonial Law",
+    "Thoughtful support through deeply personal legal matters.",
+  ],
+  [
+    "Technology, Media & Telecommunications (TMT)",
+    "Forward-looking counsel for fast-moving digital industries.",
+  ],
+  [
+    "Environmental Law",
+    "Navigating regulation and responsibility in a changing world.",
+  ],
+  [
+    "Competition Law",
+    "Advising businesses on fair markets, conduct and regulatory review.",
+  ],
+  [
+    "Consumer Law",
+    "Clear representation for consumer rights and business compliance.",
+  ],
+  [
+    "Medical Negligence",
+    "Careful advocacy in matters where trust and accountability matter.",
+  ],
+  [
+    "Corporate Advisory & Due Diligence",
+    "Insightful review for informed decisions and sustainable growth.",
+  ],
 ];
 
 const articles = [
@@ -43,21 +82,21 @@ const articles = [
     category: "Dispute Resolution",
     date: "12 September 2024",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
   },
   {
     title: "What founders should know before their first investment",
     category: "Corporate",
     date: "28 August 2024",
     image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
   },
   {
     title: "A practical guide to protecting your intellectual property",
     category: "IPR",
     date: "04 July 2024",
     image:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=85",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
   },
 ];
 
@@ -83,9 +122,7 @@ function Nav() {
 
   const linkStyle = (active = false) =>
     `whitespace-nowrap text-sm transition-colors duration-200 ${
-      active
-        ? "text-[#C5A880]"
-        : "text-white/75 hover:text-[#C5A880]"
+      active ? "text-[#C5A880]" : "text-white/75 hover:text-[#C5A880]"
     }`;
 
   const filteredPractices = practices.filter(([name, description]) => {
@@ -108,15 +145,16 @@ function Nav() {
           className="flex shrink-0 items-center "
         >
           <span className="flex h-20 w-20 items-center justify-center p-1 text-[#C5A880]">
-            <img src={logo} alt="SIDDIQUI LAW ASSOCIATES" />
+            <img
+              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png"
+              alt="SIDDIQUI LAW ASSOCIATES"
+            />
           </span>
 
           <span className="text-sm  tracking-[0.em]">
-            SIDDIQUI LAW 
+            SIDDIQUI LAW
             <br />
-            <span className=" tracking-[0.10em]">
-              ASSOCIATES
-            </span>
+            <span className=" tracking-[0.10em]">ASSOCIATES</span>
           </span>
         </Link>
 
@@ -140,7 +178,7 @@ function Nav() {
               aria-haspopup="true"
               onClick={() => setExpertise((previous) => !previous)}
               className={`flex items-center gap-2 py-3 ${linkStyle(
-                path.startsWith("/our-expertise")
+                path.startsWith("/our-expertise"),
               )}`}
             >
               Our Expertise
@@ -190,10 +228,7 @@ function Nav() {
             Insights
           </Link>
 
-          <Link
-            to="/our-team"
-            className={linkStyle(path === "/our-team")}
-          >
+          <Link to="/our-team" className={linkStyle(path === "/our-team")}>
             Our Team
           </Link>
         </nav>
@@ -410,10 +445,6 @@ function Nav() {
 export { practices, articles, slugify };
 export default Nav;
 
-
-
-
-
 // import { NavLink } from "react-router-dom";
 
 // const navigation = [
@@ -476,4 +507,3 @@ export default Nav;
 // }
 
 // export default Navbar;
-

@@ -365,7 +365,7 @@ export default function Contact() {
                     href="mailto:info@siddiquilawassociates.in"
                     className="mt-1 inline-block text-sm text-slate-600 transition hover:text-amber-800"
                   >
-                    info@siddiquilawassociates.in
+                    info@siddiquilawassociates.in <br /> adv.rahilsiddiqui@gmail.com
                   </a>
                 </div>
               </div>
@@ -386,7 +386,7 @@ export default function Contact() {
 
                 <div>
                   <h3 className="text-sm font-medium">Consultation hours</h3>
-                  <p className="mt-1 text-sm text-slate-600">By appointment</p>
+                  <p className="mt-1 text-sm text-slate-600">By appointment 09:30am to 07:30pm </p>
                 </div>
               </div>
             </div>
