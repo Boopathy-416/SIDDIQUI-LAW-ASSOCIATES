@@ -152,7 +152,7 @@ function Nav() {
             />
           </span>
 
-          <span className="text-sm  tracking-[0.em]">
+          <span className="text-sm text-[#f7f7f7c6]  tracking-[0.em]">
             SIDDIQUI LAW
             <br />
             <span className=" tracking-[0.10em]">ASSOCIATES</span>

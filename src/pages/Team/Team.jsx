@@ -143,7 +143,7 @@ function ProfileCard({ member, onOpen, index }) {
           type="button"
           onClick={() => onOpen(member.id)}
           aria-label={`View ${member.name}'s full profile`}
-          className="flex size-10 items-center justify-center rounded-full bg-[#12565a] text-white transition hover:bg-[#1c7376] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          className="flex size-10 items-center justify-center rounded-full bg-[#0a3b3d] text-white transition hover:bg-[#b48646] hover:text-black/80 transform-all ease-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
           <ArrowUpRight size={20} />
         </button>

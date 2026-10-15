@@ -7,7 +7,7 @@ import {
   Gavel,
   Globe,
   Clock,
-  MessageCircle,
+ 
   ArrowUpRight,
 } from "lucide-react";
 
@@ -98,7 +98,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative  overflow-hidden bg-[#0c1233] text-white">
+    <footer className="relative  overflow-hidden bg-[#0c1233] text-[gold:#c5a880]">
       {/* Decorative background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Consultation banner */}
         <div
           className="relative mt-10 mb-10 flex flex-col items-start
-                     justify-between gap-5 rounded-xl bg-white
+                     justify-between gap-5 rounded-xl bg-[gold:#c5a880]
                      px-6 py-6 text-gray-950 shadow-xl
                      sm:flex-row sm:items-center sm:px-8"
         >
@@ -127,7 +127,7 @@ export default function Footer() {
           <Link
             to="/contact"
             className="inline-flex shrink-0 items-center justify-center
-                       gap-2 rounded-full bg-[#19575a] px-6 py-3
+                       gap-2 rounded-full bg-[#24195a] px-6 py-3
                        text-sm font-semibold text-white
                        transition-all duration-300
                        hover:bg-[#123f42] hover:shadow-md"
@@ -289,12 +289,13 @@ export default function Footer() {
         aria-label="Chat with Siddiqui Law Associates on WhatsApp"
         className="fixed bottom-5 right-5 z-50 flex h-12 w-12
                    items-center justify-center rounded-full
-                   bg-[#007f2e] text-black shadow-lg
+                   opacity-90 text-black shadow-md
                    transition-all duration-300
                    hover:scale-110 hover:bg-[#1fba59]
                    sm:bottom-6 sm:right-6"
       >
-        <MessageCircle size={27} strokeWidth={1.5} />
+       
+        <img src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792045660/WhatsApp.svg_awuy9n.webp" alt="WhatsApp" />
       </a>
     </footer>
   );

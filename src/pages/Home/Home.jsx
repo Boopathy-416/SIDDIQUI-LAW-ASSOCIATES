@@ -242,7 +242,7 @@ function HomeHero() {
         >
           <Eyebrow light>Legal counsel · Mumbai, India</Eyebrow>
 
-          <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] text-white sm:text-7xl lg:text-[92px]">
+          <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] text-[#c5a880] sm:text-7xl lg:text-[92px]">
             Siddiqui Law
             <br />
             <span className="font-serif italic font-normal text-[#d4bd91]">
@@ -275,7 +275,7 @@ function HomeHero() {
             </a>
 
             <Link
-              to="/about/firm"
+              to="/the-firm"
               className="group inline-flex items-center gap-3 py-3 text-sm text-white/90 transition hover:text-[#d4bd91]"
             >
               Discover the firm
@@ -507,7 +507,7 @@ function HomeTeam() {
               <p className="mt-4 text-sm leading-6 text-slate-200">
                 {person.qualification}
               </p>
-              <p className="mt-2 text-xs leading-5 text-slate-300">
+              <p className="mt-2 text-xs leading-5 text-[#C5A880]">
                 {person.experience}
               </p>
             </motion.article>
@@ -726,23 +726,7 @@ function HomeContact() {
         </div>
 
         <div className="space-y-7 border-t border-white/15 pt-8 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-2">
-          <div className="flex items-start gap-4">
-            <MapPin className="mt-1 shrink-0 text-[#d4bd91]" size={21} />
-            <div>
-              <h3 className="text-sm font-semibold text-white">Office address</h3>
-              <p className="mt-2 text-sm leading-7 text-white/60">
-                {FIRM.address}
-              </p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Prakash+Chamber+77+Nagindas+Master+Road+Mumbai+400001"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-2 text-xs font-medium text-[#d4bd91] hover:text-white"
-              >
-                Find the office <ArrowUpRight size={14} />
-              </a>
-            </div>
-          </div>
+      
 
           <div className="flex items-start gap-4">
             <Mail className="mt-1 shrink-0 text-[#d4bd91]" size={21} />
@@ -778,16 +762,7 @@ function HomeContact() {
         </div>
       </div>
 
-      <div className="mx-auto mt-16 max-w-7xl border-t border-white/15 pt-6">
-        <div className="flex flex-col gap-3 text-xs leading-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <span>
-            © {new Date().getFullYear()} {FIRM.name}. All rights reserved.
-          </span>
-          <span>
-            Website designed and maintained by UNIVMARSOL
-          </span>
-        </div>
-      </div>
+
     </section>
   );
 }
