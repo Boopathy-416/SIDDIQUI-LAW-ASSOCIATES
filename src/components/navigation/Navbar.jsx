@@ -82,21 +82,21 @@ const articles = [
     category: "Dispute Resolution",
     date: "12 September 2024",
     image:
-      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg",
   },
   {
     title: "What founders should know before their first investment",
     category: "Corporate",
     date: "28 August 2024",
     image:
-      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg",
   },
   {
     title: "A practical guide to protecting your intellectual property",
     category: "IPR",
     date: "04 July 2024",
     image:
-      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png",
+      "https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg",
   },
 ];
 
@@ -135,7 +135,7 @@ function Nav() {
   });
 
   return (
-    <header className="relative z-50 w-full bg-[#00052d] text-[#e2e9f1d8]">
+    <header className="relative z-50 w-full bg-[#111111] text-[#e2e9f1d8]">
       {/* Main Navbar */}
       <div className="mx-auto flex min-h-[84px] max-w-7xl items-center justify-between gap-5 border-b border-white/10 px-5 sm:px-8 lg:px-12">
         {/* Brand */}
@@ -145,14 +145,15 @@ function Nav() {
           aria-label="SIDDIQUI LAW ASSOCIATES home"
           className="flex shrink-0 items-center "
         >
-          <span className="flex h-20 w-20 items-center justify-center p-1 text-[#C5A880]">
+          <span className="flex h-20 w-20 items-center justify-center p-1 ">
             <img
-              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png"
+              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
               alt="SIDDIQUI LAW ASSOCIATES"
             />
+            
           </span>
 
-          <span className="text-sm text-[#f7f7f7c6]  tracking-[0.em]">
+          <span className="text-sm text-[#C5A880]  tracking-[0.em]">
             SIDDIQUI LAW
             <br />
             <span className=" tracking-[0.10em]">ASSOCIATES</span>
@@ -192,7 +193,7 @@ function Nav() {
             </button>
 
             {expertise && (
-              <div className="absolute left-0 top-full mt-2 max-h-[75vh] w-80 overflow-y-auto border border-white/10 bg-[#10233D] py-2 shadow-2xl">
+              <div className="absolute left-0 top-full mt-2 max-h-[75vh] w-80 overflow-y-auto border border-white/10 bg-[#111111] py-2 shadow-2xl">
                 {practices.slice(0, 6).map(([name]) => (
                   <Link
                     key={name}
@@ -289,7 +290,7 @@ function Nav() {
 
       {/* Search Panel */}
       {searchOpen && (
-        <div className="border-b border-white/10 bg-[#10233D] px-5 py-5 sm:px-8 lg:px-12">
+        <div className="border-b border-white/10 bg-[#111111] px-5 py-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-7xl">
             <label
               htmlFor="practice-search"
@@ -357,7 +358,7 @@ function Nav() {
       {open && (
         <nav
           aria-label="Mobile navigation"
-          className="border-b border-white/10 bg-[#0A192F] px-5 py-4 sm:px-8 lg:hidden"
+          className="border-b border-white/10 bg-[#111111] px-5 py-4 sm:px-8 lg:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col">
             <Link
@@ -385,7 +386,7 @@ function Nav() {
             </button>
 
             {expertise && (
-              <div className="border-b border-white/10 bg-white/[0.03] py-2 pl-3">
+              <div className="border-b border-white/10 bg-[#111111] py-2 pl-3">
                 {practices.map(([name]) => (
                   <Link
                     key={name}

@@ -283,7 +283,7 @@ function FirmApproach() {
 
 function FirmPrinciples() {
   return (
-    <section className="bg-[#122337] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12">
+    <section className="bg-[#111111] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <Eyebrow light>What guides us</Eyebrow>

@@ -98,15 +98,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative  overflow-hidden bg-[#0c1233] text-[gold:#c5a880]">
+    <footer className="relative  overflow-hidden bg-[#111111] text-[#c5a880]">
       {/* Decorative background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div
           className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(48deg, transparent 0px, transparent 27px, rgba(255,255,255,0.12) 29px, transparent 44px)",
-          }}
+          // style={{
+          //   backgroundImage:
+          //     "repeating-linear-gradient(48deg, transparent 0px, transparent 27px, rgba(255,255,255,0.12) 29px, transparent 44px)",
+          // }}
         />
 
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10" />
@@ -116,21 +116,21 @@ export default function Footer() {
         {/* Consultation banner */}
         <div
           className="relative mt-10 mb-10 flex flex-col items-start
-                     justify-between gap-5 rounded-xl bg-[gold:#c5a880]
-                     px-6 py-6 text-gray-950 shadow-xl
+                     justify-between gap-5 rounded-xl bg-[#c5a880]/80
+                     px-6 py-6 text-gray-950  shadow-xl
                      sm:flex-row sm:items-center sm:px-8"
         >
-          <h2 className="text-xl font-medium leading-snug sm:text-2xl">
+          <h2 className="text-xl font-medium tracking-wider leading-snug sm:text-2xl">
             Get in touch with us for an initial consultation.
           </h2>
 
           <Link
             to="/contact"
             className="inline-flex shrink-0 items-center justify-center
-                       gap-2 rounded-full bg-[#24195a] px-6 py-3
+                       gap-2 rounded-full bg-[#000000]  tracking-wide px-6 py-3
                        text-sm font-semibold text-white
                        transition-all duration-300
-                       hover:bg-[#123f42] hover:shadow-md"
+                       hover:bg-[#080808ec] hover:shadow-md"
           >
             Contact Us
             <ArrowUpRight size={16} />
@@ -152,10 +152,10 @@ export default function Footer() {
               {/* Replace with your actual logo */}
               <div
                 className="flex h-16 w-16 shrink-0 items-center
-                           justify-center rounded-full border-2 border-white/80"
+                           justify-center  "
               >
                 <img
-                  src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png"
+                  src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
                   alt="Siddiqui Law Associates"
                   className="text-3xl font-semibold tracking-tighter"
                 ></img>
@@ -169,7 +169,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <div className="space-y-4">
+            <div className="space-y-4 tracking-wider">
               <ContactItem
                 href="https://www.google.com/maps/search/?api=1&query=C-293%2C%20Defence%20Colony%2C%20Delhi%20110024"
                 icon={MapPin}

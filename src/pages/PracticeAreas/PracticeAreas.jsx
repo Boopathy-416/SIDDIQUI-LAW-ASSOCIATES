@@ -272,7 +272,7 @@ export default function Expertise() {
   const activePractice = practices[activeIndex >= 0 ? activeIndex : 0];
 
   return (
-    <main className="min-h-screen bg-[#f8f7f3] text-[#102039]">
+    <main className="min-h-screen bg-[#F5F1E8] text-[#102039]">
       <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-20 xl:grid-cols-[360px_minmax(0,1fr)] xl:gap-24">
           {/* LEFT: Practice area navigation */}

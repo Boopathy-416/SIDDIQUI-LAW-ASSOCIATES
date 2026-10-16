@@ -36,7 +36,7 @@ import articles from "./Data/Article.json";
 
 function InsightsHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#103f46]">
+    <section className="relative isolate overflow-hidden bg-[#111111]">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-45"
         style={{
@@ -163,7 +163,7 @@ export default function Insights() {
   }, [query, category]);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#F5F1E8]">
       <InsightsHero />
 
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">

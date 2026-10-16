@@ -72,7 +72,7 @@ export default function DisclaimerModal() {
               aria-hidden="true"
             >
                    <img
-              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1791943251/lawww_rmus5a.png"
+              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
               alt="SIDDIQUI LAW ASSOCIATES"
             />
             </div>
@@ -174,7 +174,7 @@ export default function DisclaimerModal() {
         </div>
 
         {/* Fixed action area */}
-        <footer className="relative shrink-0 border-t border-slate-200/80 bg-white/60 px-6 py-5 sm:px-10">
+        <footer className="relative shrink-0 border-t border-slate-200/80 bg-[#F5F1E8] px-6 py-5 sm:px-10">
           <button
             type="button"
             onClick={handleAccept}

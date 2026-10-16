@@ -47,15 +47,15 @@ import {
 const teamMembers = [
   {
     id: 1,
-    name: "Mr. Parwez Ahmed Siddiqui",
-    shortName: "Parwez Ahmed Siddiqui",
+    name: "Advocate Mr. Parwez Ahmed Siddiqui",
+    shortName: "Advocate Mr.Parwez Ahmed Siddiqui",
     role: "Managing Partner",
     qualification: "B.A., LL.B.",
     experience: "47 years",
     initials: "PS",
     accent: "from-slate-300 via-slate-200 to-stone-300",
     bio:
-      "As Managing Partner of Siddiqui Law Associates, Mr. Parwez Ahmed Siddiqui brings 47 years of legal practice experience to the firm. His profile reflects a long-standing professional commitment to legal practice and client representation.",
+      "As Managing Partner of Siddiqui Law Associates, Advocate Mr. Parwez Ahmed Siddiqui brings 47 years of legal practice experience to the firm. His profile reflects a long-standing professional commitment to legal practice and client representation.",
     expertise: [
       "Legal practice",
       "Client representation",
@@ -64,15 +64,15 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Mr. Rahil Ahmed Siddiqui",
-    shortName: "Rahil Ahmed Siddiqui",
+    name: "Advocate Mr. Rahil Ahmed Siddiqui",
+    shortName: "Advocate Mr. Rahil Ahmed Siddiqui",
     role: "Founder & Partner",
     qualification: "B.L.S., LL.B., LL.M. in IT & IPR",
     experience: "35 years",
     initials: "RS",
     accent: "from-zinc-300 via-slate-200 to-slate-400",
     bio:
-      "Mr. Rahil Ahmed Siddiqui is the Founder & Partner of Siddiqui Law Associates, with 35 years of legal practice experience. His academic qualifications include an LL.M. in Information Technology and Intellectual Property Rights.",
+      "Advocate Mr. Rahil Ahmed Siddiqui is the Founder & Partner of Siddiqui Law Associates, with 35 years of legal practice experience. His academic qualifications include an LL.M. in Information Technology and Intellectual Property Rights.",
     expertise: [
       "Information Technology law — academic qualification",
       "Intellectual Property Rights — academic qualification",
@@ -81,15 +81,15 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Ms. Huma Ahmed Shaikh",
-    shortName: "Huma Ahmed Shaikh",
+    name: "Advocate Ms. Huma Ahmed Shaikh",
+    shortName: "Advocate Ms. Huma Ahmed Shaikh",
     role: "Senior Associate",
     qualification: "B.A. & LL.B.",
     experience: "20 years",
     initials: "HS",
     accent: "from-stone-300 via-neutral-200 to-stone-400",
     bio:
-      "Ms. Huma Ahmed Shaikh serves as Senior Associate at Siddiqui Law Associates and has 20 years of legal practice experience. Her profile highlights her role within the firm's legal team and her academic background in arts and law.",
+      "Advocate Ms. Huma Ahmed Shaikh serves as Senior Associate at Siddiqui Law Associates and has 20 years of legal practice experience. Her profile highlights her role within the firm's legal team and her academic background in arts and law.",
     expertise: [
       "Legal practice",
       "Legal research",
@@ -98,15 +98,15 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Mr. Eram M. Saiyad",
-    shortName: "Eram M. Saiyad",
+    name: "Advocate Mr. Eram M. Saiyad",
+    shortName: "Advocate Mr. Eram M. Saiyad",
     role: "Associate",
     qualification: "BMS & LL.B.",
     experience: "20 years",
     initials: "ES",
     accent: "from-slate-300 via-stone-200 to-neutral-400",
     bio:
-      "Mr. Eram M. Saiyad is an Associate at Siddiqui Law Associates with 20 years of legal practice experience. He holds qualifications in Management Studies and Law and contributes as a member of the firm's legal team.",
+      "Advocate Mr. Eram M. Saiyad is an Associate at Siddiqui Law Associates with 20 years of legal practice experience. He holds qualifications in Management Studies and Law and contributes as a member of the firm's legal team.",
     expertise: [
       "Legal practice",
       "Legal research",

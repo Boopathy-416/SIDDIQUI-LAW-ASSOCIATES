@@ -170,7 +170,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f6f3] text-slate-900">
+    <main className="min-h-screen bg-[#F5F1E8] text-[#111111] ">
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 max-w-2xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-amber-800">
@@ -301,7 +301,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#10243a] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#1b3857] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#10243a]  px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#1b3857] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#77716A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
                 {isSubmitting ? (
                   <>
@@ -376,7 +376,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-sm font-medium">Telephone</h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    Contact details to be confirmed
+                    +91 75069 26969
                   </p>
                 </div>
               </div>
@@ -401,17 +401,17 @@ export default function Contact() {
               Find us
             </p>
 
-            <h2 className="text-center text-3xl font-medium text-slate-900 sm:text-4xl">
+            <h2 className="text-center tracking-wide text-3xl font-medium text-slate-900 sm:text-4xl">
               Visit Our Office
             </h2>
 
-            <p className="mb-8 mt-4 max-w-xl text-center text-sm leading-6 text-slate-600 sm:text-base">
+            <p className="mb-8 mt-4 max-w-xl text-center tracking-wider text-sm leading-6 text-slate-600 sm:text-base">
               Find our office at Prakash Chamber, Nagindas Master Road,
               Mumbai.
             </p>
 
             {/* Responsive map */}
-            <div className="w-full max-w-[1200px] min-w-[400px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+            <div className="w-full max-w-[1200px] min-w-[400px] overflow-hidden rounded-xs border border-slate-200 bg-[#F5F1E8] shadow-lg">
               <iframe
                 title="Siddiqui Law Associates office location in Mumbai"
                 src={"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235.87724971628504!2d72.83210447668799!3d18.929800809649343!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c36ab2f7b1%3A0x87803dc19eaaa249!2soffice%20No1.%20Mezzanine%20Floor%2C%20Prakash%20Chambers%2C%2077%2C%20Nagindas%20Master%20Rd%2C%20FloraFountain%2C%20Fort%2C%20Mumbai%2C%20Maharashtra%20400001!5e0!3m2!1sen!2sin!4v1791887736739!5m2!1sen!2sin"}
@@ -430,7 +430,7 @@ export default function Contact() {
               href={"https://www.google.com/maps/place/office+No1.+Mezzanine+Floor,+Prakash+Chambers,+77,+Nagindas+Master+Rd,+FloraFountain,+Fort,+Mumbai,+Maharashtra+400001/@18.9298817,72.8323574,17z/data=!4m9!1m2!2m1!1schamber+77+,+nagindas+road,+fort!3m5!1s0x3be7d1c36ab2f7b1:0x87803dc19eaaa249!8m2!3d18.9298817!4d72.8323574!16s%2Fg%2F11xz1s6r59?hl=en-GB&source=lnms&g_ep=Eg1tbF8yMDI2MTAwNl8wIOC7DCoASAJQAg%3D%3D"}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#245e60] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#194749]"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full hover:bg-[#77716A] bg-[#111111]/80 px-6 py-3 text-sm font-semibold text-white transition "
             >
               Open in Google Maps
               <ArrowUpRight size={16} />
