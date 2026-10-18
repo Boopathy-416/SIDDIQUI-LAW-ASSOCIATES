@@ -289,7 +289,7 @@ export default function Footer() {
         aria-label="Chat with Siddiqui Law Associates on WhatsApp"
         className="fixed bottom-5 right-5 z-50 flex h-12 w-12
                    items-center justify-center rounded-full
-                   opacity-90 text-black shadow-md
+                   opacity-90 text-black 
                    transition-all duration-300
                    hover:scale-110 hover:bg-[#1fba59]
                    sm:bottom-6 sm:right-6"
