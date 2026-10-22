@@ -9,72 +9,148 @@ import {
   Search,
 } from "lucide-react";
 
+// const practices = [
+//   [
+//     "Arbitration & Dispute Resolution",
+//     "Resolving complex commercial disputes with clarity, strategy and discretion.",
+//   ],
+//   [
+//     "Criminal Law & White Collar Crime",
+//     "Strategic counsel for high-stakes investigations and criminal proceedings.",
+//   ],
+//   [
+//     "Corporate & Commercial Law",
+//     "Practical advice for ambitious businesses navigating growth and change.",
+//   ],
+//   [
+//     "Constitutional Law & Writs",
+//     "Protecting rights and challenging executive action through constitutional remedies.",
+//   ],
+//   [
+//     "General Litigation",
+//     "Measured, prepared representation across civil courts and tribunals.",
+//   ],
+//   [
+//     "Intellectual Property Rights (IPR)",
+//     "Helping ideas, brands and creative work stay protected and valuable.",
+//   ],
+//   [
+//     "Real Estate & Property Law",
+//     "Confident counsel for transactions, development and property disputes.",
+//   ],
+//   [
+//     "Employment & Labour Law",
+//     "Building fair, resilient workplaces and resolving employment challenges.",
+//   ],
+//   [
+//     "Banking & Finance",
+//     "Guidance on lending, securities, regulation and financial transactions.",
+//   ],
+//   [
+//     "Family & Matrimonial Law",
+//     "Thoughtful support through deeply personal legal matters.",
+//   ],
+//   [
+//     "Technology, Media & Telecommunications (TMT)",
+//     "Forward-looking counsel for fast-moving digital industries.",
+//   ],
+//   [
+//     "Environmental Law",
+//     "Navigating regulation and responsibility in a changing world.",
+//   ],
+//   [
+//     "Competition Law",
+//     "Advising businesses on fair markets, conduct and regulatory review.",
+//   ],
+//   [
+//     "Consumer Law",
+//     "Clear representation for consumer rights and business compliance.",
+//   ],
+//   [
+//     "Medical Negligence",
+//     "Careful advocacy in matters where trust and accountability matter.",
+//   ],
+//   [
+//     "Corporate Advisory & Due Diligence",
+//     "Insightful review for informed decisions and sustainable growth.",
+//   ],
+// ];
+
 const practices = [
   [
-    "Arbitration & Dispute Resolution",
-    "Resolving complex commercial disputes with clarity, strategy and discretion.",
+    "Litigation and Dispute Resolution",
+    "Strategic representation in disputes, with a focus on effective resolution and protecting clients' legal interests.",
   ],
   [
-    "Criminal Law & White Collar Crime",
-    "Strategic counsel for high-stakes investigations and criminal proceedings.",
-  ],
-  [
-    "Corporate & Commercial Law",
-    "Practical advice for ambitious businesses navigating growth and change.",
-  ],
-  [
-    "Constitutional Law & Writs",
-    "Protecting rights and challenging executive action through constitutional remedies.",
+    "Criminal Law and White-Collar Crimes",
+    "Representation in criminal proceedings, including bail, anticipatory bail, NDPS, POCSO, and white-collar crime matters.",
   ],
   [
     "General Litigation",
-    "Measured, prepared representation across civil courts and tribunals.",
+    "Prepared and considered representation in civil proceedings and other litigation matters before appropriate courts and forums.",
   ],
   [
-    "Intellectual Property Rights (IPR)",
-    "Helping ideas, brands and creative work stay protected and valuable.",
+    "Arbitration and Dispute Resolution",
+    "Guidance and representation in arbitration proceedings and alternative dispute resolution processes.",
   ],
   [
-    "Real Estate & Property Law",
-    "Confident counsel for transactions, development and property disputes.",
+    "Constitutional Law and Writs",
+    "Legal advice and representation in constitutional matters, writ petitions, and the protection of legal rights.",
   ],
   [
-    "Employment & Labour Law",
-    "Building fair, resilient workplaces and resolving employment challenges.",
+    "Corporate and Commercial",
+    "Legal support for businesses in commercial matters, corporate disputes, and business-related legal concerns.",
   ],
   [
-    "Banking & Finance",
-    "Guidance on lending, securities, regulation and financial transactions.",
+    "Corporate and Commercial Law",
+    "Counsel on corporate and commercial legal matters, contractual obligations, and business transactions.",
   ],
   [
-    "Family & Matrimonial Law",
-    "Thoughtful support through deeply personal legal matters.",
+    "Corporate Advisory and Due Diligence",
+    "Legal reviews and advisory support to help businesses assess risks and make informed decisions.",
   ],
   [
-    "Technology, Media & Telecommunications (TMT)",
-    "Forward-looking counsel for fast-moving digital industries.",
-  ],
-  [
-    "Environmental Law",
-    "Navigating regulation and responsibility in a changing world.",
+    "Banking and Finance",
+    "Legal assistance in banking, financial transactions, lending matters, and related disputes.",
   ],
   [
     "Competition Law",
-    "Advising businesses on fair markets, conduct and regulatory review.",
+    "Advice on competition-related legal issues, regulatory obligations, and market conduct.",
   ],
   [
-    "Consumer Law",
-    "Clear representation for consumer rights and business compliance.",
+    "Intellectual Property Rights (IPR)",
+    "Legal support concerning intellectual property rights, brand protection, and related disputes.",
+  ],
+  [
+    "Technology, Media and Telecommunications (TMT)",
+    "Legal guidance on technology, media, telecommunications, and related regulatory matters.",
+  ],
+  [
+    "Real Estate and Property Law",
+    "Legal assistance in property transactions, real estate matters, ownership issues, and property disputes.",
+  ],
+  [
+    "Employment and Labour Law",
+    "Advice on employment relationships, labour-related disputes, workplace obligations, and POSH matters.",
+  ],
+  [
+    "Family and Matrimonial Law",
+    "Sensitive and considered legal guidance in family disputes and matrimonial matters.",
+  ],
+  [
+    "Consumer Laws",
+    "Legal advice and representation concerning consumer rights, complaints, and consumer protection matters.",
   ],
   [
     "Medical Negligence",
-    "Careful advocacy in matters where trust and accountability matter.",
+    "Legal representation in medical negligence matters, with attention to accountability and applicable legal standards.",
   ],
   [
-    "Corporate Advisory & Due Diligence",
-    "Insightful review for informed decisions and sustainable growth.",
+    "Environmental Law",
+    "Legal guidance on environmental regulations, compliance, and related disputes.",
   ],
 ];
+
 
 const articles = [
   {
@@ -153,10 +229,11 @@ function Nav() {
             
           </span>
 
-          <span className="text-sm text-[#C5A880]  tracking-[0.em]">
+          <span className="text-sm text-[#C5A880]  tracking-[0.10em]">
             SIDDIQUI LAW
             <br />
-            <span className=" tracking-[0.10em]">ASSOCIATES</span>
+         
+            <span className="  tracking-widest ">ASSOCIATES</span>
           </span>
         </Link>
 
@@ -166,10 +243,10 @@ function Nav() {
           className="hidden items-center gap-7 lg:flex xl:gap-9"
         >
           <Link
-            to="/the-firm"
-            className={linkStyle(path.startsWith("/the-firm"))}
+            to="/"
+            className={linkStyle(path === "/")}
           >
-            The Firm
+            The Home
           </Link>
 
           {/* Expertise Dropdown */}

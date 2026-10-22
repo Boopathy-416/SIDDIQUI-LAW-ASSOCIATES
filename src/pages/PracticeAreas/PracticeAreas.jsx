@@ -38,216 +38,484 @@ import { useParams } from "react-router-dom";
 
 
 
+// const practices = [
+//   {
+//     title: "Arbitration & Dispute Resolution",
+//     description:
+//       "Resolving complex commercial disputes with clarity, strategy and discretion.",
+//     overview:
+//       "Legal disputes require a clear understanding of the facts, commercial objectives and available remedies. We help clients evaluate their position, assess risks and pursue an appropriate resolution.",
+//     services: [
+//       "Strategic legal advice",
+//       "Dispute management",
+//       "Arbitration proceedings",
+//       "Representation and settlement strategy",
+//     ],
+//   },
+//   {
+//     title: "Criminal Law & White Collar Crime",
+//     description:
+//       "Strategic counsel for high-stakes investigations and criminal proceedings.",
+//     overview:
+//       "Criminal proceedings and regulatory investigations demand careful preparation, confidentiality and a disciplined approach to protecting legal rights.",
+//     services: [
+//       "Criminal defence strategy",
+//       "Investigation support",
+//       "Bail and related applications",
+//       "Court representation",
+//     ],
+//   },
+//   {
+//     title: "Corporate & Commercial Law",
+//     description:
+//       "Practical advice for ambitious businesses navigating growth and change.",
+//     overview:
+//       "Businesses need legal frameworks that support their commercial objectives while addressing contractual obligations, operational risks and regulatory requirements.",
+//     services: [
+//       "Commercial contracts",
+//       "Corporate advisory",
+//       "Business negotiations",
+//       "Contractual dispute resolution",
+//     ],
+//   },
+//   {
+//     title: "Constitutional Law & Writs",
+//     description:
+//       "Protecting rights and challenging executive action through constitutional remedies.",
+//     overview:
+//       "Constitutional remedies may be available when governmental action, administrative decisions or the exercise of public authority raises questions of legality or fundamental rights.",
+//     services: [
+//       "Constitutional remedies",
+//       "Writ petitions",
+//       "Administrative law matters",
+//       "Representation in appropriate proceedings",
+//     ],
+//   },
+//   {
+//     title: "General Litigation",
+//     description:
+//       "Measured, prepared representation across civil courts and tribunals.",
+//     overview:
+//       "Effective litigation begins with understanding the evidence, identifying the relevant legal issues and developing a strategy appropriate to the client's objectives.",
+//     services: [
+//       "Civil litigation",
+//       "Case assessment and preparation",
+//       "Interim applications",
+//       "Court representation",
+//     ],
+//   },
+//   {
+//     title: "Intellectual Property Rights (IPR)",
+//     description:
+//       "Helping ideas, brands and creative work stay protected and valuable.",
+//     overview:
+//       "Intellectual property can be central to a company's identity and commercial value. Appropriate protection and enforcement help safeguard creative work, brands and innovation.",
+//     services: [
+//       "Trademark advisory",
+//       "Copyright matters",
+//       "IP licensing and agreements",
+//       "Intellectual property disputes",
+//     ],
+//   },
+//   {
+//     title: "Real Estate & Property Law",
+//     description:
+//       "Confident counsel for transactions, development and property disputes.",
+//     overview:
+//       "Property transactions require careful review of title, contractual obligations, applicable regulations and potential disputes before important decisions are made.",
+//     services: [
+//       "Property documentation",
+//       "Title and due diligence review",
+//       "Real estate transactions",
+//       "Property dispute resolution",
+//     ],
+//   },
+//   {
+//     title: "Employment & Labour Law",
+//     description:
+//       "Building fair, resilient workplaces and resolving employment challenges.",
+//     overview:
+//       "Employment matters involve the rights and responsibilities of employers and employees. A considered legal approach helps address workplace disputes and compliance concerns.",
+//     services: [
+//       "Employment agreements",
+//       "Workplace dispute advisory",
+//       "Labour law compliance",
+//       "Employment litigation",
+//     ],
+//   },
+//   {
+//     title: "Banking & Finance",
+//     description:
+//       "Guidance on lending, securities, regulation and financial transactions.",
+//     overview:
+//       "Financial arrangements can involve complex contractual obligations, security interests and regulatory requirements. Careful review helps clients understand their position and available options.",
+//     services: [
+//       "Loan documentation",
+//       "Financial contract review",
+//       "Banking disputes",
+//       "Security and recovery matters",
+//     ],
+//   },
+//   {
+//     title: "Family & Matrimonial Law",
+//     description:
+//       "Thoughtful support through deeply personal legal matters.",
+//     overview:
+//       "Family and matrimonial disputes require discretion, sensitivity and a clear understanding of the applicable law. We focus on helping clients evaluate their options and protect their interests.",
+//     services: [
+//       "Divorce and matrimonial proceedings",
+//       "Maintenance matters",
+//       "Child custody disputes",
+//       "Mediation and settlement",
+//     ],
+//   },
+//   {
+//     title: "Technology, Media & Telecommunications (TMT)",
+//     description:
+//       "Forward-looking counsel for fast-moving digital industries.",
+//     overview:
+//       "Digital businesses face evolving legal questions involving technology agreements, intellectual property, online activities, privacy and industry regulation.",
+//     services: [
+//       "Technology contracts",
+//       "IT and software agreements",
+//       "Digital rights advisory",
+//       "Media and telecommunications matters",
+//     ],
+//   },
+//   {
+//     title: "Environmental Law",
+//     description:
+//       "Navigating regulation and responsibility in a changing world.",
+//     overview:
+//       "Environmental matters can involve regulatory approvals, compliance obligations and disputes concerning environmental responsibilities and the use of natural resources.",
+//     services: [
+//       "Environmental compliance",
+//       "Regulatory advisory",
+//       "Environmental disputes",
+//       "Related proceedings and representation",
+//     ],
+//   },
+//   {
+//     title: "Competition Law",
+//     description:
+//       "Advising businesses on fair markets, conduct and regulatory review.",
+//     overview:
+//       "Competition law affects commercial arrangements, market conduct and business combinations. Understanding the applicable rules helps businesses identify and manage regulatory risk.",
+//     services: [
+//       "Competition law advisory",
+//       "Commercial arrangement review",
+//       "Regulatory compliance",
+//       "Competition proceedings",
+//     ],
+//   },
+//   {
+//     title: "Consumer Law",
+//     description:
+//       "Clear representation for consumer rights and business compliance.",
+//     overview:
+//       "Consumer disputes may concern defective products, deficient services, contractual obligations or unfair trade practices. Appropriate legal guidance helps clarify the available remedies.",
+//     services: [
+//       "Consumer complaints",
+//       "Product and service disputes",
+//       "Consumer protection advisory",
+//       "Consumer forum representation",
+//     ],
+//   },
+//   {
+//     title: "Medical Negligence",
+//     description:
+//       "Careful advocacy in matters where trust and accountability matter.",
+//     overview:
+//       "Medical negligence matters require close attention to records, applicable professional standards, causation and the evidence needed to evaluate a potential claim or defence.",
+//     services: [
+//       "Medical record review",
+//       "Negligence claim assessment",
+//       "Consumer proceedings",
+//       "Related dispute representation",
+//     ],
+//   },
+//   {
+//     title: "Corporate Advisory & Due Diligence",
+//     description:
+//       "Insightful review for informed decisions and sustainable growth.",
+//     overview:
+//       "Due diligence helps identify legal, contractual and operational risks before a transaction or major business decision. Structured review supports better-informed commercial decisions.",
+//     services: [
+//       "Legal due diligence",
+//       "Contract and document review",
+//       "Corporate risk assessment",
+//       "Transaction advisory",
+//     ],
+//   },
+// ];
+
 const practices = [
   {
-    title: "Arbitration & Dispute Resolution",
+    title: "Litigation and Dispute Resolution",
     description:
-      "Resolving complex commercial disputes with clarity, strategy and discretion.",
+      "Strategic representation in disputes, focused on protecting legal rights and pursuing appropriate resolutions.",
     overview:
-      "Legal disputes require a clear understanding of the facts, commercial objectives and available remedies. We help clients evaluate their position, assess risks and pursue an appropriate resolution.",
+      "Litigation and dispute resolution require a careful assessment of the facts, applicable law, available remedies, and the client's objectives. We assist clients in evaluating their legal position and developing an appropriate strategy.",
     services: [
-      "Strategic legal advice",
-      "Dispute management",
-      "Arbitration proceedings",
-      "Representation and settlement strategy",
+      "Dispute assessment and legal advice",
+      "Litigation strategy",
+      "Civil and commercial disputes",
+      "Dispute resolution proceedings",
     ],
   },
   {
-    title: "Criminal Law & White Collar Crime",
+    title: "Criminal Law and White-Collar Crimes",
     description:
-      "Strategic counsel for high-stakes investigations and criminal proceedings.",
+      "Legal representation in criminal proceedings, investigations, bail matters, and white-collar crime cases.",
     overview:
-      "Criminal proceedings and regulatory investigations demand careful preparation, confidentiality and a disciplined approach to protecting legal rights.",
+      "Criminal proceedings demand careful preparation, sound legal analysis, and a considered approach to protecting legal rights. We assist clients in criminal matters, including bail applications, anticipatory bail, NDPS matters, POCSO matters, and white-collar crime proceedings.",
     services: [
-      "Criminal defence strategy",
-      "Investigation support",
-      "Bail and related applications",
+      "Criminal defence and legal advice",
+      "Regular bail and anticipatory bail",
+      "NDPS matters",
+      "POCSO matters",
+      "White-collar crime proceedings",
+    ],
+  },
+  {
+    title: "General Litigation",
+    description:
+      "Prepared legal representation in litigation matters before appropriate courts and judicial forums.",
+    overview:
+      "Effective litigation begins with a thorough understanding of the facts, evidence, and legal issues involved. We help clients assess their cases, understand available remedies, and pursue appropriate legal proceedings.",
+    services: [
+      "Case assessment and preparation",
+      "Civil litigation",
+      "Interim applications",
       "Court representation",
     ],
   },
   {
-    title: "Corporate & Commercial Law",
+    title: "Arbitration and Dispute Resolution",
     description:
-      "Practical advice for ambitious businesses navigating growth and change.",
+      "Guidance and representation in arbitration proceedings and alternative dispute resolution matters.",
     overview:
-      "Businesses need legal frameworks that support their commercial objectives while addressing contractual obligations, operational risks and regulatory requirements.",
+      "Arbitration and other dispute resolution processes can offer structured ways to address disagreements. We assist clients in assessing disputes, understanding procedural requirements, and pursuing appropriate remedies.",
     services: [
-      "Commercial contracts",
-      "Corporate advisory",
-      "Business negotiations",
-      "Contractual dispute resolution",
+      "Arbitration advisory",
+      "Arbitration proceedings",
+      "Dispute strategy",
+      "Settlement and resolution support",
     ],
   },
   {
-    title: "Constitutional Law & Writs",
+    title: "Constitutional Law and Writs",
     description:
-      "Protecting rights and challenging executive action through constitutional remedies.",
+      "Legal advice and representation in constitutional matters and writ proceedings.",
     overview:
-      "Constitutional remedies may be available when governmental action, administrative decisions or the exercise of public authority raises questions of legality or fundamental rights.",
+      "Constitutional matters may involve fundamental rights, administrative decisions, and the exercise of public authority. We assist clients in examining legal issues and evaluating appropriate constitutional remedies.",
     services: [
-      "Constitutional remedies",
+      "Constitutional law advisory",
       "Writ petitions",
       "Administrative law matters",
       "Representation in appropriate proceedings",
     ],
   },
   {
-    title: "General Litigation",
+    title: "Corporate and Commercial",
     description:
-      "Measured, prepared representation across civil courts and tribunals.",
+      "Legal support for businesses navigating commercial relationships, obligations, and disputes.",
     overview:
-      "Effective litigation begins with understanding the evidence, identifying the relevant legal issues and developing a strategy appropriate to the client's objectives.",
+      "Commercial activities involve contractual responsibilities, business relationships, and legal risks. We help clients understand relevant legal issues and address commercial concerns through considered legal advice.",
     services: [
-      "Civil litigation",
-      "Case assessment and preparation",
-      "Interim applications",
-      "Court representation",
+      "Commercial legal advisory",
+      "Business disputes",
+      "Commercial agreements",
+      "Contractual obligations",
     ],
   },
   {
-    title: "Intellectual Property Rights (IPR)",
+    title: "Corporate and Commercial Law",
     description:
-      "Helping ideas, brands and creative work stay protected and valuable.",
+      "Practical legal guidance on corporate matters, commercial transactions, and contractual relationships.",
     overview:
-      "Intellectual property can be central to a company's identity and commercial value. Appropriate protection and enforcement help safeguard creative work, brands and innovation.",
+      "Corporate and commercial matters require an understanding of business objectives, legal obligations, and applicable regulatory requirements. We provide considered legal guidance to help clients evaluate their options.",
     services: [
-      "Trademark advisory",
-      "Copyright matters",
-      "IP licensing and agreements",
-      "Intellectual property disputes",
+      "Corporate legal advisory",
+      "Commercial contracts",
+      "Business transactions",
+      "Contractual dispute resolution",
     ],
   },
   {
-    title: "Real Estate & Property Law",
+    title: "Corporate Advisory and Due Diligence",
     description:
-      "Confident counsel for transactions, development and property disputes.",
+      "Structured legal review to identify risks and support informed business decisions.",
     overview:
-      "Property transactions require careful review of title, contractual obligations, applicable regulations and potential disputes before important decisions are made.",
+      "Corporate advisory and due diligence involve examining legal documents, contractual obligations, and potential risks associated with transactions or business decisions.",
     services: [
-      "Property documentation",
-      "Title and due diligence review",
-      "Real estate transactions",
-      "Property dispute resolution",
+      "Legal due diligence",
+      "Corporate document review",
+      "Contract review",
+      "Legal risk assessment",
+      "Transaction advisory",
     ],
   },
   {
-    title: "Employment & Labour Law",
+    title: "Banking and Finance",
     description:
-      "Building fair, resilient workplaces and resolving employment challenges.",
+      "Legal assistance in banking matters, financial transactions, lending, and related disputes.",
     overview:
-      "Employment matters involve the rights and responsibilities of employers and employees. A considered legal approach helps address workplace disputes and compliance concerns.",
+      "Banking and finance matters may involve lending arrangements, contractual obligations, financial documentation, and disputes. We help clients assess their legal position and available remedies.",
     services: [
-      "Employment agreements",
-      "Workplace dispute advisory",
-      "Labour law compliance",
-      "Employment litigation",
-    ],
-  },
-  {
-    title: "Banking & Finance",
-    description:
-      "Guidance on lending, securities, regulation and financial transactions.",
-    overview:
-      "Financial arrangements can involve complex contractual obligations, security interests and regulatory requirements. Careful review helps clients understand their position and available options.",
-    services: [
-      "Loan documentation",
+      "Loan documentation review",
       "Financial contract review",
       "Banking disputes",
-      "Security and recovery matters",
-    ],
-  },
-  {
-    title: "Family & Matrimonial Law",
-    description:
-      "Thoughtful support through deeply personal legal matters.",
-    overview:
-      "Family and matrimonial disputes require discretion, sensitivity and a clear understanding of the applicable law. We focus on helping clients evaluate their options and protect their interests.",
-    services: [
-      "Divorce and matrimonial proceedings",
-      "Maintenance matters",
-      "Child custody disputes",
-      "Mediation and settlement",
-    ],
-  },
-  {
-    title: "Technology, Media & Telecommunications (TMT)",
-    description:
-      "Forward-looking counsel for fast-moving digital industries.",
-    overview:
-      "Digital businesses face evolving legal questions involving technology agreements, intellectual property, online activities, privacy and industry regulation.",
-    services: [
-      "Technology contracts",
-      "IT and software agreements",
-      "Digital rights advisory",
-      "Media and telecommunications matters",
-    ],
-  },
-  {
-    title: "Environmental Law",
-    description:
-      "Navigating regulation and responsibility in a changing world.",
-    overview:
-      "Environmental matters can involve regulatory approvals, compliance obligations and disputes concerning environmental responsibilities and the use of natural resources.",
-    services: [
-      "Environmental compliance",
-      "Regulatory advisory",
-      "Environmental disputes",
-      "Related proceedings and representation",
+      "Lending and security matters",
     ],
   },
   {
     title: "Competition Law",
     description:
-      "Advising businesses on fair markets, conduct and regulatory review.",
+      "Legal guidance on competition-related issues, business conduct, and regulatory obligations.",
     overview:
-      "Competition law affects commercial arrangements, market conduct and business combinations. Understanding the applicable rules helps businesses identify and manage regulatory risk.",
+      "Competition law concerns may arise from commercial arrangements, market conduct, and business practices. We assist clients in understanding applicable legal requirements and evaluating potential regulatory issues.",
     services: [
       "Competition law advisory",
       "Commercial arrangement review",
-      "Regulatory compliance",
-      "Competition proceedings",
+      "Regulatory compliance guidance",
+      "Competition-related disputes",
     ],
   },
   {
-    title: "Consumer Law",
+    title: "Intellectual Property Rights (IPR)",
     description:
-      "Clear representation for consumer rights and business compliance.",
+      "Legal support concerning intellectual property protection, ownership, and disputes.",
     overview:
-      "Consumer disputes may concern defective products, deficient services, contractual obligations or unfair trade practices. Appropriate legal guidance helps clarify the available remedies.",
+      "Intellectual property rights can be important to businesses, professionals, and creators. We assist clients with intellectual property matters and the legal issues surrounding the protection and use of their work.",
+    services: [
+      "Trademark-related matters",
+      "Copyright matters",
+      "Intellectual property agreements",
+      "IPR disputes",
+    ],
+  },
+  {
+    title: "Technology, Media and Telecommunications (TMT)",
+    description:
+      "Legal guidance on technology, media, telecommunications, and related regulatory matters.",
+    overview:
+      "Technology, media, and telecommunications raise legal questions involving contracts, digital activities, intellectual property, and regulatory obligations. We help clients assess relevant legal issues and available options.",
+    services: [
+      "Technology agreements",
+      "Software and IT contracts",
+      "Media-related legal matters",
+      "Telecommunications and regulatory matters",
+    ],
+  },
+  {
+    title: "Property, Employment and Personal Law",
+    description:
+      "Legal guidance across property matters, employment concerns, and personal legal issues.",
+    overview:
+      "Property, employment, and personal legal matters often involve important individual, family, and business interests. We help clients understand their legal position and consider appropriate courses of action.",
+    services: [
+      "Property-related legal advice",
+      "Employment matters",
+      "Personal legal matters",
+      "Dispute assessment and representation",
+    ],
+  },
+  {
+    title: "Real Estate and Property Law",
+    description:
+      "Legal assistance in real estate transactions, property documentation, ownership issues, and disputes.",
+    overview:
+      "Property matters require careful consideration of ownership, title documents, contractual obligations, and applicable laws. We assist clients in evaluating property-related legal issues and addressing disputes.",
+    services: [
+      "Property documentation",
+      "Title and document review",
+      "Real estate transactions",
+      "Property dispute resolution",
+    ],
+  },
+  {
+    title: "Employment and Labour Law",
+    description:
+      "Legal advice on employment relationships, labour matters, workplace obligations, and POSH issues.",
+    overview:
+      "Employment and labour matters involve workplace rights, employer and employee responsibilities, and compliance with applicable laws. We assist clients in addressing employment disputes and related legal concerns, including POSH matters.",
+    services: [
+      "Employment agreements",
+      "Employment and labour disputes",
+      "Workplace legal advisory",
+      "POSH-related legal matters",
+    ],
+  },
+  {
+    title: "Family and Matrimonial Law",
+    description:
+      "Considered legal guidance in family disputes and matrimonial proceedings.",
+    overview:
+      "Family and matrimonial matters require discretion, sensitivity, and a clear understanding of the applicable law. We assist clients in evaluating their legal options and addressing matters affecting their personal and family interests.",
+    services: [
+      "Matrimonial proceedings",
+      "Divorce-related matters",
+      "Family disputes",
+      "Legal advice on personal and family matters",
+    ],
+  },
+  {
+    title: "Public Interest and Consumer Matters",
+    description:
+      "Legal assistance in public interest issues and disputes concerning consumer rights.",
+    overview:
+      "Public interest and consumer matters can involve individual rights, access to appropriate remedies, and issues affecting the wider public. We help clients understand relevant legal provisions and available avenues for redress.",
+    services: [
+      "Public interest legal matters",
+      "Consumer disputes",
+      "Legal remedies and representation",
+      "Consumer protection advisory",
+    ],
+  },
+  {
+    title: "Consumer Laws",
+    description:
+      "Legal advice and representation concerning consumer rights and consumer protection matters.",
+    overview:
+      "Consumer law addresses disputes involving goods, services, consumer rights, and applicable legal protections. We assist clients in assessing complaints and understanding appropriate legal remedies.",
     services: [
       "Consumer complaints",
-      "Product and service disputes",
       "Consumer protection advisory",
-      "Consumer forum representation",
+      "Goods and services disputes",
+      "Consumer forum proceedings",
     ],
   },
   {
     title: "Medical Negligence",
     description:
-      "Careful advocacy in matters where trust and accountability matter.",
+      "Legal assistance in medical negligence disputes and matters involving professional accountability.",
     overview:
-      "Medical negligence matters require close attention to records, applicable professional standards, causation and the evidence needed to evaluate a potential claim or defence.",
+      "Medical negligence matters require careful examination of records, relevant evidence, applicable professional standards, and the legal issues involved. We assist clients in assessing claims and related proceedings.",
     services: [
       "Medical record review",
-      "Negligence claim assessment",
-      "Consumer proceedings",
-      "Related dispute representation",
+      "Medical negligence claim assessment",
+      "Related consumer proceedings",
+      "Dispute representation",
     ],
   },
   {
-    title: "Corporate Advisory & Due Diligence",
+    title: "Environmental Law",
     description:
-      "Insightful review for informed decisions and sustainable growth.",
+      "Legal guidance on environmental obligations, regulatory requirements, and related disputes.",
     overview:
-      "Due diligence helps identify legal, contractual and operational risks before a transaction or major business decision. Structured review supports better-informed commercial decisions.",
+      "Environmental matters may involve regulatory compliance, statutory obligations, and disputes concerning environmental responsibilities. We assist clients in understanding the relevant legal framework and evaluating appropriate responses.",
     services: [
-      "Legal due diligence",
-      "Contract and document review",
-      "Corporate risk assessment",
-      "Transaction advisory",
+      "Environmental law advisory",
+      "Regulatory compliance matters",
+      "Environmental disputes",
+      "Related legal proceedings",
     ],
   },
 ];
+
+
+
 
 // Convert titles to the same URL format used by your project.
 

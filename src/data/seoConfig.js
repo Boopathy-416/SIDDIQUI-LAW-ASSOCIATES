@@ -1,11 +1,11 @@
 const seoConfig = {
-  siteName: "[INSERT VERIFIED FIRM NAME]",
-  siteUrl: import.meta.env.VITE_SITE_URL || "https://example.com",
+  siteName: "SIDDIQUI LAW ASSOCIATES",
+  siteUrl: import.meta.env.VITE_SITE_URL || "https://siddiquilawassociates.in",
 
-  defaultTitle: "[INSERT VERIFIED FIRM NAME] | Legal Counsel",
+  defaultTitle: "SIDDIQUI LAW ASSOCIATES | JUSTICE | INTEGRITY | EXECELLENCE",
 
   defaultDescription:
-    "[INSERT VERIFIED META DESCRIPTION]",
+    "SIDDIQUI LAW ASSOCIATES is a premier law firm dedicated to providing exceptional legal services with a focus on justice, integrity, and excellence.",
 
   defaultImage: "/og-image.jpg",
 

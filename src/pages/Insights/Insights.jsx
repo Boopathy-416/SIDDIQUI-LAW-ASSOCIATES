@@ -69,7 +69,7 @@ function InsightsHero() {
 
 function ArticleCard({ article }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-slate-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex h-full flex-col overflow-hidden rounded-sm border  border-slate-100 bg-white/80 hover:bg-[#000000] shadow-[0_2px_12px_rgba(0,0,0,0.09)] transition duration-500 ease-in hover:-translate-y-1 hover:shadow-lg">
       <Link
         to={`/insights/${article.id}`}
         aria-label={`Read ${article.title}`}
@@ -100,7 +100,7 @@ function ArticleCard({ article }) {
         <h2 className="text-lg font-medium leading-snug text-slate-900">
           <Link
             to={`/insights/${article.id}`}
-            className="transition hover:text-teal-800"
+            className="transition text-teal-800"
           >
             {article.title}
           </Link>
@@ -113,7 +113,7 @@ function ArticleCard({ article }) {
         <div className="mt-auto pt-5">
           <Link
             to={`/insights/${article.id}`}
-            className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-slate-900 transition hover:text-teal-800"
+            className="inline-flex items-center gap-2 text-[11px] font-bold uppercase  text-red-900/80 transition hover:text-white tracking-wider"
           >
             Read more
             <ArrowUpRight
@@ -124,8 +124,8 @@ function ArticleCard({ article }) {
         </div>
       </div>
 
-      <div className="border-t border-slate-100 px-4 py-3 sm:px-5">
-        <p className="text-xs text-slate-400">
+      <div className="border-t border-slate-50 px-4 py-3 sm:px-5">
+        <p className="text-xs text-slate-600">
           {article.date}
         </p>
       </div>

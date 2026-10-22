@@ -1,11 +1,10 @@
-
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import articles from "./Data/Article.json";
 
 function ArticleHero({ article }) {
   return (
-    <section className="relative isolate overflow-hidden bg-[#103f46]">
+    <section className="relative isolate overflow-hidden bg-[#0d3136]">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-25"
         style={{
@@ -46,13 +45,13 @@ function ArticleHero({ article }) {
 
 function ArticleBody({ article }) {
   return (
-    <div className="space-y-6 text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
+    <div className="space-y-6 text-[15px]  leading-8 text-slate-600 sm:text-base sm:leading-8">
       {article.content.map((block, index) => {
         if (block.type === "heading") {
           return (
             <h2
               key={index}
-              className="pt-4 text-2xl font-semibold leading-snug tracking-tight text-slate-900 sm:text-3xl"
+              className="pt-4 text-2xl font-semibold  leading-snug tracking-tight text-slate-900 sm:text-3xl"
             >
               {block.text}
             </h2>
@@ -94,10 +93,7 @@ function ArticleNavigation({ article, index }) {
           to={`/insights/${previous.id}`}
           className="group flex items-start gap-3"
         >
-          <ArrowLeft
-            size={18}
-            className="mt-1 shrink-0 text-teal-800"
-          />
+          <ArrowLeft size={18} className="mt-1 shrink-0 text-teal-800" />
 
           <span>
             <span className="block text-xs text-slate-400">
@@ -118,18 +114,13 @@ function ArticleNavigation({ article, index }) {
           className="group flex items-start justify-end gap-3 text-right"
         >
           <span>
-            <span className="block text-xs text-slate-400">
-              Next article
-            </span>
+            <span className="block text-xs text-slate-400">Next article</span>
             <span className="mt-1 block text-sm font-medium leading-6 text-slate-800 group-hover:text-teal-800">
               {next.title}
             </span>
           </span>
 
-          <ArrowRight
-            size={18}
-            className="mt-1 shrink-0 text-teal-800"
-          />
+          <ArrowRight size={18} className="mt-1 shrink-0 text-teal-800" />
         </Link>
       )}
     </nav>
@@ -164,12 +155,10 @@ export default function ArticleDetails() {
     );
   }
 
-  const relatedArticles = articles.filter(
-    (item) => item.id !== article.id
-  );
+  const relatedArticles = articles.filter((item) => item.id !== article.id);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#f8f9fa] ">
       <ArticleHero article={article} />
 
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,760px)_260px] lg:gap-16">
@@ -183,10 +172,9 @@ export default function ArticleDetails() {
           <ArticleBody article={article} />
 
           <p className="mt-8 border-l-2 border-teal-800 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-500">
-            This article is provided for general informational
-            purposes only and does not constitute legal advice.
-            The appropriate legal position depends on the
-            circumstances of each matter and the applicable law.
+            This article is provided for general informational purposes only and
+            does not constitute legal advice. The appropriate legal position
+            depends on the circumstances of each matter and the applicable law.
           </p>
 
           <ArticleNavigation article={article} index={index} />
@@ -211,9 +199,7 @@ export default function ArticleDetails() {
                   className="aspect-[16/9] w-full rounded-sm bg-slate-100 object-cover"
                 />
 
-                <p className="mt-3 text-xs text-slate-400">
-                  {item.date}
-                </p>
+                <p className="mt-3 text-xs text-slate-400">{item.date}</p>
 
                 <h3 className="mt-2 text-base font-medium leading-6 text-slate-900 transition group-hover:text-teal-800">
                   {item.title}

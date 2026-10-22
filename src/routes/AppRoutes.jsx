@@ -18,7 +18,7 @@ function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
 
-        <Route path="/the-firm" element={<TheFirm />} />
+        {/* <Route path="/the-firm" element={<TheFirm />} /> */}
 
         <Route
           path="/our-expertise"
