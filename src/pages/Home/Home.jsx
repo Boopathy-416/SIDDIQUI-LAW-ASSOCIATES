@@ -52,18 +52,18 @@
 
 // export default Home;
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
-  Check,
   Scale,
   ShieldCheck,
-  Compass,
   Award,
   BookOpen,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Slugify from "../../utils/slugify.js";
 
@@ -133,8 +133,6 @@ const approachPrinciples = [
   },
 ];
 
-// ----------------------
-
 const FIRM = {
   name: "Siddiqui Law Associates",
   tagline: "Committed to Justice. Dedicated to Your Rights.",
@@ -153,81 +151,6 @@ const homeImages = {
   consultation:
     "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85",
 };
-
-const practices = [
-  [
-    "Arbitration & Dispute Resolution",
-    "Legal support for arbitration proceedings and dispute resolution.",
-  ],
-
-  [
-    "Employment & Labour Law",
-    "Legal assistance with employment and labour matters.",
-  ],
-  [
-    "Banking & Finance",
-    "Legal assistance relating to banking and financial matters.",
-  ],
-  [
-    "Family & Matrimonial Law",
-    "Legal support for family and matrimonial disputes.",
-  ],
-  [
-    "Technology, Media & Telecommunications (TMT)",
-    "Legal support for technology, media and telecommunications matters.",
-  ],
-];
-
-const team = [
-  {
-    name: "Mr. Parwez Ahmed Siddiqui",
-    role: "Managing Partner",
-    qualification: "B.A., LL.B.",
-    experience: "47 years of practice",
-  },
-  {
-    name: "Mr. Rahil Ahmed Siddiqui",
-    role: "Founder & Partner",
-    qualification: "B.L.S., LL.B., LL.M. in IT & IPR",
-    experience: "35 years of practice",
-  },
-  {
-    name: "Ms. Huma Ahmed Shaikh",
-    role: "Senior Associate",
-    qualification: "B.A. & LL.B.",
-    experience: "20 years of practice",
-  },
-  {
-    name: "Mr. Eram M. Saiyad",
-    role: "Associate",
-    qualification: "B.M.S. & LL.B.",
-    experience: "20 years of practice",
-  },
-];
-
-const firmValues = [
-  {
-    icon: Compass,
-    number: "01",
-    title: "Integrity & Professionalism",
-    description:
-      "We are committed to ethical legal services, professional conduct and responsible guidance.",
-  },
-  {
-    icon: ShieldCheck,
-    number: "02",
-    title: "Confidentiality & Trust",
-    description:
-      "We recognize the importance of confidentiality and protecting our clients' interests.",
-  },
-  {
-    icon: Scale,
-    number: "03",
-    title: "Commitment to Justice",
-    description:
-      "We approach legal matters with careful consideration and a strong commitment to justice.",
-  },
-];
 
 function Eyebrow({ children, light = false }) {
   return (
@@ -265,220 +188,618 @@ function SectionHeading({ eyebrow, title, highlight, light = false }) {
   );
 }
 
+// function HomeHero() {
+//   return (
+//     <section className="relative isolate flex min-h-[650px] items-center overflow-hidden bg-[#0c1826] sm:min-h-[740px] lg:min-h-[800px]">
+//       {/* Hero Background Image */}
+//       <img
+//         src={homeImages.hero}
+//         alt="Contemporary architecture in Mumbai"
+//         fetchPriority="high"
+//         className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
+//       />
+
+//       {/* Background Overlays */}
+//       <div className="absolute inset-0 -z-20 bg-[#091523]/65" />
+//       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#091523]/95 via-[#091523]/75 to-[#091523]/20" />
+
+//       {/* Decorative Divider */}
+//       <div className="absolute inset-y-0 right-[12%] hidden w-px bg-white/15 lg:block" />
+
+//       {/* Hero Content */}
+//       <div className="mx-auto w-full max-w-7xl px-5 pb-32 pt-24 sm:px-8 sm:pb-36 lg:px-12">
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, ease: "easeOut" }}
+//           className="max-w-4xl"
+//         >
+//           <Eyebrow light>Justice | Integrity | Excellence</Eyebrow>
+
+//           {/* Main Heading */}
+//           <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] text-[#F5F1E8]/80 sm:text-7xl lg:text-[92px]">
+//             Siddiqui Law Associates
+//             <br />
+//             <span className="font-serif italic font-normal text-[#d4bd91]">
+//               Advocates & Legal Consultants
+//             </span>
+//           </h1>
+
+//           {/* Primary Introduction */}
+//           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/90 sm:text-xl sm:leading-9">
+//             Siddiqui Law Associates is a Mumbai-based law firm with over three
+//             decades of experience in the courts, rooted in Criminal Litigation
+//             and extending across diverse areas of law.
+//           </p>
+
+//           {/* Firm Overview */}
+//           <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+//             We appear in all courts in Mumbai and across other states, guided by
+//             meticulous preparation, clear advice, and professional ethics.
+//           </p>
+
+//           {/* Call-to-Action Buttons */}
+//           <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+//             <a
+//               href={`https://wa.me/${FIRM.phone.replace(/\D/g, "")}`}
+//               target="_blank"
+//               rel="noreferrer"
+//               className="group inline-flex min-h-14 items-center gap-5 bg-[#c5a878] px-6 py-4 text-sm font-semibold text-[#111e2c] transition hover:bg-[#e0cba4]"
+//             >
+//               Contact the Firm
+//               <ArrowUpRight
+//                 size={18}
+//                 className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+//               />
+//             </a>
+
+//             <Link
+//               to="/the-team"
+//               className="group inline-flex items-center gap-3 py-3 text-sm text-white/90 transition hover:text-[#d4bd91]"
+//             >
+//               Discover the Team
+//               <ArrowRight
+//                 size={17}
+//                 className="transition-transform group-hover:translate-x-1"
+//               />
+//             </Link>
+//           </div>
+//         </motion.div>
+//       </div>
+
+//       {/* Bottom Information Bar */}
+//       <div className="absolute bottom-0 left-0 right-0 border-t border-white/20">
+//         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+//           <p className="text-xs leading-6 text-white/65 sm:text-sm">
+//             Legal Services · Mumbai, India
+//           </p>
+
+//           <div className="flex items-center gap-3">
+//             <span className="h-px w-12 bg-[#c5a878]" />
+//             <span className="text-xs tracking-[0.2em] text-white">
+//               16 PRACTICE AREAS
+//             </span>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+const heroSlides = [
+  {
+    id: "01",
+    eyebrow: "SIDDIQUI LAW ASSOCIATES",
+    title: "The law is our",
+    highlight: "foundation.",
+    description:
+      "Over three decades of legal experience, grounded in integrity, preparation, and a commitment to justice.",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=90",
+    theme: "dark",
+    layout: "editorial",
+    label: "EXPERIENCE & PERSPECTIVE",
+  },
+  {
+    id: "02",
+    eyebrow: "OUR PRINCIPLES",
+    title: "Justice is our",
+    highlight: "mission.",
+    description:
+      "Clear legal guidance. Thoughtful strategy. Principled representation for individuals, families, and businesses.",
+    image:
+      "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1600&q=90",
+    theme: "dark",
+    layout: "split",
+    label: "INTEGRITY · DILIGENCE · TRUST",
+  },
+  {
+    id: "03",
+    eyebrow: "WORK WITH US",
+    title: "Your next step",
+    highlight: "starts here.",
+    description:
+      "Facing a legal challenge? Speak with our team for clear guidance and committed legal representation.",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=90",
+    theme: "dark",
+    layout: "contact",
+    label: "LEGAL GUIDANCE · MUMBAI & BEYOND",
+  },
+];
+
 function HomeHero() {
+  const [active, setActive] = useState(0);
+  const slide = heroSlides[active];
+  const isLight = slide.theme === "light";
+
+  const nextSlide = () => {
+    setActive((current) => (current + 1) % heroSlides.length);
+  };
+
+  const previousSlide = () => {
+    setActive(
+      (current) =>
+        (current - 1 + heroSlides.length) % heroSlides.length
+    );
+  };
+
+  useEffect(() => {
+    const timer = window.setInterval(nextSlide, 6500);
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative isolate flex min-h-[650px] items-center overflow-hidden bg-[#0c1826] sm:min-h-[740px] lg:min-h-[800px]">
-      {/* Hero Background Image */}
-      <img
-        src={homeImages.hero}
-        alt="Contemporary architecture in Mumbai"
-        fetchPriority="high"
-        className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
+    <section className="relative isolate min-h-[680px] overflow-hidden bg-[#101c2a] sm:min-h-[740px] lg:min-h-[790px]">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slide.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.65 }}
+          className="absolute inset-0"
+        >
+          <img
+            src={slide.image}
+            alt=""
+            fetchPriority={active === 0 ? "high" : "auto"}
+            className={`absolute inset-0 h-full w-full object-cover ${
+              slide.layout === "editorial"
+                ? "object-center"
+                : "object-center"
+            }`}
+          />
+
+          <div
+            className={`absolute inset-0 ${
+              isLight
+                ? "bg-[#f5f1e8]/90"
+                : "bg-[#091523]/75"
+            }`}
+          />
+
+          <div
+            className={`absolute inset-0 ${
+              isLight
+                ? "bg-gradient-to-r from-[#f5f1e8] via-[#f5f1e8]/95 to-[#f5f1e8]/65"
+                : "bg-gradient-to-r from-[#091523]/95 via-[#091523]/80 to-[#091523]/35"
+            }`}
+          />
+
+          {slide.layout === "split" && (
+            <div className="absolute right-0 -top-35 hidden h-full w-[35%] border-l border-[#967748]/25 lg:block">
+              <div className="flex h-full items-end justify-center p-12">
+                <div className="max-w-xs border-l-2 border-[#967748] pl-6">
+                  <p className="text-xs tracking-[0.24em] text-[#967748]">
+                    OUR APPROACH
+                  </p>
+                  <p className="mt-5 font-serif text-3xl italic leading-snug text-[#65696c]">
+                    Thoughtful counsel.
+                    <br />
+                    Principled action.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Editorial frame */}
+      <div
+        className={`pointer-events-none absolute inset-5 border sm:inset-8 ${
+          isLight ? "border-[#122337]/10" : "border-white/10"
+        }`}
       />
 
-      {/* Background Overlays */}
-      <div className="absolute inset-0 -z-20 bg-[#091523]/65" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#091523]/95 via-[#091523]/75 to-[#091523]/20" />
+      <div className="relative mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-center px-8 pb-36 pt-28 sm:min-h-[740px] sm:px-14 lg:min-h-[790px] lg:px-24">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={slide.id}
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className={`relative z-10 max-w-4xl ${
+              slide.layout === "split" ? "lg:max-w-3xl" : ""
+            }`}
+          >
+            <div
+              className={`mb-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] sm:text-xs ${
+                isLight ? "text-[#967748]" : "text-[#d4bd91]"
+              }`}
+            >
+              <span className="h-px w-10 bg-current" />
+              {slide.eyebrow}
+            </div>
 
-      {/* Decorative Divider */}
-      <div className="absolute inset-y-0 right-[12%] hidden w-px bg-white/15 lg:block" />
+            <p
+              className={`mb-5 text-xs tracking-[0.22em] ${
+                isLight ? "text-[#122337]/55" : "text-white/55"
+              }`}
+            >
+              {slide.label}
+            </p>
 
-      {/* Hero Content */}
-      <div className="mx-auto w-full max-w-7xl px-5 pb-32 pt-24 sm:px-8 sm:pb-36 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl"
+            <h1
+              className={`text-5xl font-medium leading-[1.05] tracking-[-0.055em] sm:text-7xl lg:text-[100px] ${
+                isLight ? "text-[#122337]" : "text-[#f5f1e8]"
+              }`}
+            >
+              {slide.title}
+              <br />
+              <span
+                className={`font-serif font-normal italic ${
+                  isLight ? "text-[#967748]" : "text-[#d4bd91]"
+                }`}
+              >
+                {slide.highlight}
+              </span>
+            </h1>
+
+            <p
+              className={`mt-8 max-w-xl text-base leading-8 sm:text-lg ${
+                isLight ? "text-[#122337]/75" : "text-white/75"
+              }`}
+            >
+              {slide.description}
+            </p>
+
+            <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+              <a
+                href={`https://wa.me/${FIRM.phone.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noreferrer"
+                className={`group inline-flex min-h-14 items-center gap-5 px-6 py-4 text-sm font-semibold transition ${
+                  isLight
+                    ? "bg-[#122337] text-white hover:bg-[#263e56]"
+                    : "bg-[#c5a878] text-[#122337] hover:bg-[#e0cba4]"
+                }`}
+              >
+                {slide.layout === "contact"
+                  ? "Book a Consultation"
+                  : "Contact the Firm"}
+                <ArrowUpRight
+                  size={17}
+                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </a>
+
+              <Link
+                to="/the-team"
+                className={`group inline-flex items-center gap-3 py-3 text-sm transition ${
+                  isLight
+                    ? "text-[#122337] hover:text-[#967748]"
+                    : "text-white/90 hover:text-[#d4bd91]"
+                }`}
+              >
+                Meet Our Team
+                <ArrowRight
+                  size={17}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Bottom slider controls */}
+        <div
+          className={`absolute bottom-10 left-8 right-8 flex items-end justify-between border-t pt-6 sm:left-14 sm:right-14 lg:left-24 lg:right-24 ${
+            isLight ? "border-[#122337]/20" : "border-white/20"
+          }`}
         >
-          <Eyebrow light>Justice | Integrity | Excellence</Eyebrow>
-
-          {/* Main Heading */}
-          <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] text-[#F5F1E8]/80 sm:text-7xl lg:text-[92px]">
-            Siddiqui Law Associates
-            <br />
-            <span className="font-serif italic font-normal text-[#d4bd91]">
-              Advocates & Legal Consultants
-            </span>
-          </h1>
-
-          {/* Primary Introduction */}
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/90 sm:text-xl sm:leading-9">
-            Siddiqui Law Associates is a Mumbai-based law firm with over three
-            decades of experience in the courts, rooted in Criminal Litigation
-            and extending across diverse areas of law.
-          </p>
-
-          {/* Firm Overview */}
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-            We appear in all courts in Mumbai and across other states, guided by
-            meticulous preparation, clear advice, and professional ethics.
-          </p>
-
-          {/* Call-to-Action Buttons */}
-          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <a
-              href={`https://wa.me/${FIRM.phone.replace(/\D/g, "")}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex min-h-14 items-center gap-5 bg-[#c5a878] px-6 py-4 text-sm font-semibold text-[#111e2c] transition hover:bg-[#e0cba4]"
+          <div>
+            <p
+              className={`mb-4 text-[9px] uppercase tracking-[0.2em] ${
+                isLight ? "text-[#122337]/55" : "text-white/50"
+              }`}
             >
-              Contact the Firm
-              <ArrowUpRight
-                size={18}
-                className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </a>
+              EXPLORE THE FIRM
+            </p>
 
-            <Link
-              to="/the-team"
-              className="group inline-flex items-center gap-3 py-3 text-sm text-white/90 transition hover:text-[#d4bd91]"
-            >
-              Discover the Team
-              <ArrowRight
-                size={17}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Link>
+            <div className="flex items-center gap-3">
+              {heroSlides.map((item, index) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setActive(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={active === index ? "true" : undefined}
+                  className={`h-[3px] transition-all duration-300 ${
+                    active === index
+                      ? "w-12 bg-[#c5a878]"
+                      : `w-6 ${
+                          isLight ? "bg-[#122337]/25" : "bg-white/30"
+                        } hover:bg-[#c5a878]`
+                  }`}
+                />
+              ))}
+              <span
+                className={`ml-2 font-serif text-sm ${
+                  isLight ? "text-[#122337]" : "text-white"
+                }`}
+              >
+                0{active + 1}
+                <span className="mx-1 opacity-40">/</span>
+                0{heroSlides.length}
+              </span>
+            </div>
           </div>
-        </motion.div>
-      </div>
 
-      {/* Bottom Information Bar */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/20">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-          <p className="text-xs leading-6 text-white/65 sm:text-sm">
-            Legal Services · Mumbai, India
-          </p>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={previousSlide}
+              aria-label="Previous slide"
+              className={`flex h-11 w-11 items-center justify-center border transition ${
+                isLight
+                  ? "border-[#122337]/20 text-[#122337] hover:bg-[#122337] hover:text-white"
+                  : "border-white/25 text-white hover:border-[#c5a878] hover:text-[#d4bd91]"
+              }`}
+            >
+              <ChevronLeft size={19} />
+            </button>
 
-          <div className="flex items-center gap-3">
-            <span className="h-px w-12 bg-[#c5a878]" />
-            <span className="text-xs tracking-[0.2em] text-white">
-              16 PRACTICE AREAS
-            </span>
+            <button
+              type="button"
+              onClick={nextSlide}
+              aria-label="Next slide"
+              className={`flex h-11 w-11 items-center justify-center border transition ${
+                isLight
+                  ? "border-[#122337]/20 text-[#122337] hover:bg-[#122337] hover:text-white"
+                  : "border-white/25 text-white hover:border-[#c5a878] hover:text-[#d4bd91]"
+              }`}
+            >
+              <ChevronRight size={19} />
+            </button>
           </div>
         </div>
+      </div>
+
+      {/* Side label */}
+      <div
+        className={`absolute right-3 top-1/2 hidden -translate-y-1/2 rotate-90 text-[9px] tracking-[0.3em] xl:block ${
+          isLight ? "text-[#122337]/50" : "text-white/50"
+        }`}
+      >
+        ADVOCATES & LEGAL CONSULTANTS
       </div>
     </section>
   );
 }
 
+
+
+
 function About() {
   return (
     <main className="bg-[#F5F1E8] text-[#122337]">
       {/* About Us Hero */}
-      <section className="relative overflow-hidden bg-[#040404] px-5 py-24 sm:px-8 sm:py-32 lg:px-12 lg:py-10">
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0c1826] via-[#122337] to-[#091523]" /> */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative mx-auto max-w-7xl"
-        >
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#d4bd91]">
+<section className="relative isolate overflow-hidden bg-[#0b1420] px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+  {/* Background details */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-[#c5a878]/[0.045] blur-[120px]" />
+    <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#c5a878]/40 to-transparent" />
+    <div className="absolute inset-y-0 right-[8%] hidden w-px bg-white/[0.04] lg:block" />
+  </div>
+
+  <div className="mx-auto max-w-[1380px]">
+    {/* Editorial introduction */}
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7 }}
+      className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20"
+    >
+      {/* Left: About heading */}
+      <div>
+        <div className="flex items-center gap-3">
+          <span className="h-px w-10 bg-[#c5a878]" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d4bd91] sm:text-xs">
             Siddiqui Law Associates · Mumbai
           </p>
+        </div>
 
-          <h1 className="mt-8 max-w-4xl text-5xl font-medium leading-tight tracking-tight text-[#f5f1e8] sm:text-6xl lg:text-8xl">
-            About{" "}
-            <span className="font-serif italic font-normal text-[#d4bd91]">
-              Us
-            </span>
-          </h1>
+        <h2 className="mt-8 text-5xl font-medium tracking-[-0.055em] text-[#f5f1e8] sm:text-7xl lg:text-[92px] lg:leading-[1.05]">
+          About
+          <span className="ml-3 font-serif font-normal italic text-[#c5a878]">
+            Us.
+          </span>
+        </h2>
 
-          <p className="mt-7 max-w-3xl font-serif text-2xl leading-relaxed text-white sm:text-3xl lg:text-4xl">
+        <div className="mt-8 max-w-xl">
+          <p className="font-serif text-2xl leading-snug text-[#f5f1e8] sm:text-3xl lg:text-4xl">
             The law is our foundation
-            <br />
-            <span className="italic text-[#d4bd91]">
-              Justice is our mission
-            </span>
+          </p>
+          <p className="mt-2 font-serif text-2xl italic leading-snug text-[#c5a878] sm:text-3xl lg:text-4xl">
+            Justice is our mission
+          </p>
+        </div>
+
+        <div className="mt-8 flex items-center gap-3">
+          <span className="h-[2px] w-12 bg-[#c5a878]" />
+          <span className="h-px w-16 bg-[#c5a878]/30" />
+        </div>
+      </div>
+
+      {/* Right: Signature philosophy panel */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.75, delay: 0.15 }}
+        className="relative overflow-hidden border border-[#c5a878]/25 bg-gradient-to-br from-[#172536] to-[#0d1724] p-7 sm:p-10 lg:p-12"
+      >
+        <div className="absolute right-5 top-0 font-serif text-[130px] leading-none text-[#c5a878]/[0.08] sm:text-[180px]">
+          “
+        </div>
+
+        <div className="relative">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d4bd91]">
+              Our Guiding Principles
+            </p>
+            <Scale
+              size={22}
+              strokeWidth={1.2}
+              className="shrink-0 text-[#c5a878]"
+            />
+          </div>
+
+          <div className="my-7 h-px w-full bg-gradient-to-r from-[#c5a878]/60 to-transparent" />
+
+          <p className="font-serif text-2xl leading-relaxed text-[#f5f1e8] sm:text-3xl">
+            SIDDIQUI LAW ASSOCIATES
           </p>
 
-          <div className="mt-10 h-px w-24 bg-[#c5a878]" />
-        </motion.div>
-        <div className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-0 lg:px-12">
-          {/* Background */}
+          <p className="mt-5 max-w-sm text-sm leading-7 text-white/60">
+            The Law Is Our Foundation. Justice Is Our Mission.
+          </p>
 
-          <div className="relative mx-auto max-w-7xl">
-            {/* Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <p className="text-xl  tracking-widest text-[#f5f1e8] sm:text-2xl">
-                SIDDIQUI LAW ASSOCIATES
-              </p>
-
-              <h2 className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-[#d4bd91] sm:text-base">
-                Our Guiding Principles
-              </h2>
-            </motion.div>
-
-            {/* Gold divider */}
-            <div className="mt-9 h-px w-full bg-[#c5a878]/80 sm:mt-10" />
-
-            {/* Three Pillars */}
-            <div className="grid grid-cols-1 divide-y divide-[#c5a878]/30 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-              {pillars.map((pillar, index) => {
-                const Icon = pillar.icon;
-
-                return (
-                  <motion.article
-                    key={pillar.title}
-                    initial={{ opacity: 0, y: 22 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.55,
-                      delay: index * 0.12,
-                    }}
-                    className="group flex flex-col items-center px-5 py-8 text-center sm:px-4 sm:py-9 lg:px-10 lg:py-10"
-                  >
-                    <Icon
-                      size={34}
-                      strokeWidth={2}
-                      className="text-[#d4bd91] transition-transform duration-300 group-hover:-translate-y-1"
-                    />
-
-                    <h3 className="mt-5 text-xl font-bold tracking-wide text-[#f5f1e8] sm:text-lg lg:text-xl">
-                      {pillar.title}
-                    </h3>
-
-                    <p className="mt-3 text-base font-medium text-[#d4bd91]">
-                      {pillar.subtitle}
-                    </p>
-
-                    <p className="mt-3 max-w-xs text-sm leading-6 text-white/65">
-                      {pillar.description}
-                    </p>
-                  </motion.article>
-                );
-              })}
+          <div className="mt-9 flex items-center gap-4">
+            <div className="flex h-11 w-11 items-center justify-center border border-[#c5a878]/40 rounded-full">
+              <ShieldCheck
+                size={20}
+                strokeWidth={1.3}
+                className="text-[#d4bd91]"
+              />
             </div>
-
-            {/* Bottom divider */}
-            <div className="h-px w-full bg-[#c5a878]/80" />
-
-            {/* Closing tagline */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="mt-8 text-center font-serif text-xl font-semibold leading-relaxed text-[#d4bd91] sm:mt-9 sm:text-md lg:text-xl"
-            >
-              The Law Is Our Foundation. Justice Is Our Mission.
-            </motion.p>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#f5f1e8]">
+                Justice · Integrity · Excellence
+              </p>
+              <p className="mt-1 text-xs text-white/45">
+                Our professional values
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div className="absolute bottom-0 right-0 h-1 w-24 bg-[#c5a878]" />
+      </motion.div>
+    </motion.div>
+
+    {/* Principles heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mt-20 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 sm:mt-24 sm:flex-row sm:items-end"
+    >
+      <div>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#c5a878]">
+          What Defines Us
+        </p>
+        <h3 className="mt-3 font-serif text-3xl text-[#f5f1e8] sm:text-4xl">
+          Principles that guide us.
+        </h3>
+      </div>
+
+      <p className="max-w-sm text-sm leading-6 text-white/50">
+        Our commitment to the values that shape our professional practice.
+      </p>
+    </motion.div>
+
+    {/* Three principle cards */}
+    <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+      {pillars.map((pillar, index) => {
+        const Icon = pillar.icon;
+
+        return (
+          <motion.article
+            key={pillar.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.55,
+              delay: index * 0.12,
+            }}
+            className="group relative flex min-h-[255px] flex-col overflow-hidden border border-white/10 bg-white/[0.025] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#c5a878]/50 hover:bg-[#172536] sm:p-8 lg:p-9"
+          >
+            <div className="flex items-center justify-between">
+              <span className="font-serif text-sm italic text-[#c5a878]/70">
+                0{index + 1}
+              </span>
+
+              <div className="flex h-12 w-12 items-center justify-center border border-[#c5a878]/30 transition-colors duration-300 group-hover:bg-[#c5a878]/10">
+                <Icon
+                  size={22}
+                  strokeWidth={1.4}
+                  className="text-[#d4bd91] transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold tracking-[0.12em] text-[#f5f1e8]">
+                {pillar.title}
+              </h4>
+
+              <p className="mt-2 font-serif text-lg italic text-[#c5a878]">
+                {pillar.subtitle}
+              </p>
+
+              <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
+                {pillar.description}
+              </p>
+            </div>
+
+            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#c5a878] transition-all duration-500 group-hover:w-full" />
+          </motion.article>
+        );
+      })}
+    </div>
+
+    {/* Closing statement */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-7 text-center sm:flex-row sm:text-left"
+    >
+      <p className="max-w-2xl font-serif text-lg leading-relaxed text-[#d4bd91] sm:text-xl">
+        The Law Is Our Foundation. Justice Is Our Mission.
+      </p>
+
+      <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/40">
+        <span className="h-px w-8 bg-[#c5a878]/70" />
+        Mumbai · India
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Firm Introduction */}
-      <section className="px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+      {/* <section className="px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -523,10 +844,114 @@ function About() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+      
+{/* Firm Introduction */}
+<section className="relative isolate overflow-hidden bg-[#0b1420] px-5 py-20 text-[#f5f1e8] sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+  {/* Architectural background lines */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="absolute inset-y-0 left-[8%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute inset-y-0 right-[8%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#c5a878]/[0.04] blur-[100px]" />
+  </div>
+
+  <div className="mx-auto max-w-[1380px]">
+    <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      {/* Left editorial heading */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65 }}
+        className="relative"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-px w-9 bg-[#c5a878]" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#d4bd91]">
+            Who We Are
+          </p>
+        </div>
+
+        <h2 className="mt-8 text-4xl font-medium leading-[1.15] tracking-tight text-[#f5f1e8] sm:text-5xl lg:text-6xl">
+          A legacy
+          <br />
+          of law.
+          <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
+            A commitment
+            <br />
+            to justice.
+          </span>
+        </h2>
+
+        <div className="mt-9 flex items-center gap-3">
+          <span className="h-[2px] w-12 bg-[#c5a878]" />
+          <span className="h-px w-16 bg-[#c5a878]/30" />
+        </div>
+
+        <div className="mt-12 hidden border-l border-[#c5a878]/30 py-2 pl-5 lg:block">
+          <p className="font-serif text-2xl italic leading-relaxed text-white/70">
+            “The law is our foundation.
+            <br />
+            Justice is our mission.”
+          </p>
+          <p className="mt-4 text-[9px] uppercase tracking-[0.2em] text-[#d4bd91]/70">
+            Siddiqui Law Associates
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Right content panel */}
+      <motion.div
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.12 }}
+        className="relative border border-white/10 bg-white/[0.025] p-6 sm:p-9 lg:p-11"
+      >
+        <div className="absolute right-0 top-0 h-12 w-12 border-r border-t border-[#c5a878]/60" />
+        <div className="absolute bottom-0 left-0 h-12 w-12 border-b border-l border-[#c5a878]/60" />
+
+        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d4bd91]">
+          Our Firm · Our Commitment
+        </p>
+
+        <div className="my-6 h-px bg-gradient-to-r from-[#c5a878]/60 via-white/10 to-transparent" />
+
+        <div className="space-y-6 text-sm leading-8 text-white/65 sm:text-base sm:leading-9">
+          <p>
+            Siddiqui Law Associates is a Mumbai-based law firm with over three
+            decades of experience in the courts. Our practice is rooted in
+            Criminal Litigation and extends across corporate, commercial,
+            civil, property, family, and regulatory law.
+          </p>
+
+          <p>
+            We appear in all courts in Mumbai and in courts across other
+            states.
+          </p>
+        </div>
+
+        <div className="mt-9 border-l-2 border-[#c5a878] bg-[#c5a878]/[0.055] px-5 py-5 sm:px-7 sm:py-6">
+          <p className="font-serif text-xl italic leading-relaxed text-[#f5f1e8] sm:text-2xl">
+            We do not treat clients as case numbers. We listen carefully,
+            explain clearly, and fight diligently.
+          </p>
+        </div>
+
+        <div className="mt-8 flex items-center justify-between gap-4">
+          <span className="text-[9px] uppercase tracking-[0.2em] text-white/40">
+            Professional Representation
+          </span>
+          <Scale size={21} strokeWidth={1.2} className="text-[#c5a878]" />
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
       {/* Our Story */}
-      <section className="border-y border-[#e4e0d7] bg-white px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+      {/* <section className="border-y border-[#e4e0d7] bg-white px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -600,10 +1025,407 @@ function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+{/* Our Story */}
+<section className="relative isolate overflow-hidden border-y border-[#c5a878]/20 bg-[#101c2a] px-5 py-20 text-[#f5f1e8] sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+  {/* Background architecture */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="absolute inset-y-0 left-[8%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute inset-y-0 right-[8%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#c5a878]/[0.035] blur-[120px]" />
+  </div>
+
+  <div className="mx-auto max-w-[1380px]">
+    {/* Story introduction */}
+    <motion.div
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.65 }}
+      className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20 lg:pb-14"
+    >
+      <div>
+        <div className="flex items-center gap-3">
+          <span className="h-px w-9 bg-[#c5a878]" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#d4bd91]">
+            Our Story
+          </p>
+        </div>
+
+        <h2 className="mt-7 text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          Built on
+          <br />
+          experience.
+          <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
+            Continued through
+            <br className="hidden sm:block" />
+            generations.
+          </span>
+        </h2>
+      </div>
+
+      <div className="max-w-2xl space-y-5 text-sm leading-8 text-white/65 sm:text-base sm:leading-9">
+        <p>
+          Our story began in 1994, when Advocate Parwez Ahmed Siddiqui
+          started practicing law. He began with Criminal Litigation, where
+          he built a reputation on hard work, honest advice, and a deep
+          sense of duty to the people who trusted him with their liberty and
+          their future.
+        </p>
+
+        <p>
+          Today, his son Advocate Rahil Ahmed Siddiqui and his daughters,
+          Advocate Mrs. Huma A. Shaikh and Advocate Eram M. Sayyad, practice
+          alongside him. We grew up in a home where law was a way of life,
+          and we learned early that behind every case file is a person, a
+          family, or a livelihood.
+        </p>
+
+        <p>
+          Today, the firm combines the experience of its founder with the
+          energy of a second generation of advocates. As the practice has
+          grown, so has the range of matters we handle, allowing us to serve
+          individuals, families, and businesses under one roof.
+        </p>
+
+        <p>
+          That is why we do not treat clients as case numbers. We listen
+          carefully, explain clearly, and fight diligently.
+        </p>
+      </div>
+    </motion.div>
+
+    {/* Timeline heading */}
+    <div className="flex flex-col justify-between gap-3 pt-10 sm:flex-row sm:items-end sm:pt-14">
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.23em] text-[#d4bd91]">
+          Our Journey
+        </p>
+        <h3 className="mt-3 font-serif text-3xl sm:text-4xl">
+          A tradition of commitment.
+        </h3>
+      </div>
+
+      <p className="text-xs uppercase tracking-[0.15em] text-white/40">
+        Experience · Continuity · Progress
+      </p>
+    </div>
+
+    {/* Timeline */}
+    <div className="relative mt-9 border-t border-[#c5a878]/35">
+      {storyMilestones.map((item, index) => (
+        <motion.article
+          key={item.title}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.55, delay: index * 0.1 }}
+          className="group relative grid gap-5 border-b border-white/10 py-8 transition-colors duration-300 hover:bg-white/[0.025] sm:grid-cols-[150px_1fr] sm:gap-8 sm:py-10 lg:grid-cols-[200px_1fr] lg:gap-12"
+        >
+          {/* Timeline year */}
+          <div className="flex items-start gap-4 sm:gap-5">
+            <span className="mt-2 h-2.5 w-2.5 shrink-0 border border-[#c5a878] bg-[#101c2a] ring-4 ring-[#c5a878]/[0.08] transition-colors group-hover:bg-[#c5a878]" />
+
+            <p className="text-sm font-semibold tracking-[0.08em] text-[#d4bd91] sm:text-base">
+              {item.year}
+            </p>
+          </div>
+
+          {/* Milestone content */}
+          <div className="pl-6 sm:pl-0">
+            <h4 className="text-xl font-medium text-[#f5f1e8] transition-colors group-hover:text-[#d4bd91] sm:text-2xl">
+              {item.title}
+            </h4>
+
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-white/55 sm:text-base sm:leading-8">
+              {item.description}
+            </p>
+          </div>
+
+          <div className="absolute bottom-0 left-0 h-px w-0 bg-[#c5a878] transition-all duration-500 group-hover:w-full" />
+        </motion.article>
+      ))}
+    </div>
+
+    {/* Closing statement */}
+    <div className="mt-10 flex flex-col gap-4 border border-[#c5a878]/20 bg-[#0b1420]/50 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+      <p className="max-w-2xl font-serif text-xl italic leading-relaxed text-[#d4bd91] sm:text-2xl">
+        A legacy built on trust. A future guided by justice.
+      </p>
+
+      <span className="text-[9px] uppercase tracking-[0.22em] text-white/40">
+        Siddiqui Law Associates
+      </span>
+    </div>
+  </div>
+</section>
+
+
+
+{/* Our Approach */}
+<section className="relative isolate overflow-hidden border-y border-[#c5a878]/25 bg-[#0b1420] px-5 py-20 text-[#f5f1e8] sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+  {/* Architectural background lines */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="absolute inset-y-0 left-[6%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute inset-y-0 right-[6%] hidden w-px bg-white/[0.045] lg:block" />
+    <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#c5a878]/[0.045] blur-[140px]" />
+    <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#c5a878]/40 to-transparent" />
+  </div>
+
+  <div className="mx-auto max-w-[1380px]">
+    {/* Main editorial layout */}
+    <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch lg:gap-14">
+      {/* Left: Approach content */}
+      <motion.div
+        initial={{ opacity: 0, x: -22 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.7 }}
+        className="flex flex-col justify-center"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-px w-9 bg-[#c5a878]" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d4bd91] sm:text-xs">
+            Our Approach
+          </p>
+        </div>
+
+        <h2 className="mt-7 text-4xl font-medium leading-[1.12] tracking-tight text-[#f5f1e8] sm:text-5xl lg:text-6xl">
+          Thoughtful counsel
+          <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
+            Strategic advocacy
+          </span>
+        </h2>
+
+        <div className="mt-7 h-[2px] w-12 bg-[#c5a878]" />
+
+        <div className="mt-8 space-y-5 text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
+          <p>
+            At Siddiqui Law Associates, our approach is founded on the
+            belief that effective legal representation begins with a
+            thorough understanding of the law, a precise assessment of the
+            facts, and a clearly defined legal strategy.
+          </p>
+
+          <p>
+            We approach each matter with analytical rigour, strategic
+            foresight, and a commitment to professional ethics. Whether
+            advising on complex legal issues, navigating disputes, or
+            representing clients before judicial and quasi-judicial forums,
+            we emphasize meticulous preparation, sound legal reasoning, and
+            advocacy grounded in applicable law.
+          </p>
+
+          <p>
+            We recognize that every matter presents distinct challenges and
+            requires an approach suited to its particular circumstances.
+            Accordingly, we focus on understanding the legal position,
+            evaluating available options, and providing considered advice
+            that enables informed decision-making.
+          </p>
+
+          <p>
+            For us, the pursuit of justice demands more than knowledge of
+            the law. It requires preparation, conviction, sound judgment,
+            and unwavering respect for the principles that govern the legal
+            profession.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Right: Legal imagery and framed detail */}
+      <motion.div
+        initial={{ opacity: 0, x: 22 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.8, delay: 0.12 }}
+        className="grid min-h-[440px] grid-cols-[1fr_0.35fr] gap-3 sm:min-h-[540px] sm:gap-4 lg:min-h-full"
+      >
+        {/* Main image */}
+        <div className="group relative min-h-[440px] overflow-hidden border border-[#c5a878]/50 sm:min-h-[540px]">
+          <img
+            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=85"
+            alt="Legal books and scales of justice"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07111d]/95 via-[#07111d]/15 to-[#07111d]/20" />
+
+          <div className="absolute left-4 top-4 h-8 w-8 border-l border-t border-[#d4bd91] sm:left-6 sm:top-6 sm:h-12 sm:w-12" />
+          <div className="absolute bottom-4 right-4 h-8 w-8 border-b border-r border-[#d4bd91] sm:bottom-6 sm:right-6 sm:h-12 sm:w-12" />
+
+          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#d4bd91] sm:text-[10px]">
+              Siddiqui Law Associates
+            </p>
+
+            <h3 className="mt-3 max-w-sm font-serif text-2xl leading-snug text-[#f5f1e8] sm:text-3xl">
+              Preparation with purpose.
+              <span className="block italic text-[#d4bd91]">
+                Advocacy with conviction.
+              </span>
+            </h3>
+          </div>
+        </div>
+
+        {/* Narrow architectural panel */}
+        <div className="relative overflow-hidden border border-[#c5a878]/50 bg-[#101e2d]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b1420]/20 via-[#0b1420]/55 to-[#0b1420]/95" />
+
+          <div className="absolute inset-x-3 top-3 h-5 border-r border-t border-[#c5a878]/80 sm:inset-x-4 sm:top-4 sm:h-7" />
+          <div className="absolute inset-x-3 bottom-3 h-5 border-b border-r border-[#c5a878]/80 sm:inset-x-4 sm:bottom-4 sm:h-7" />
+
+          <div className="relative flex h-full flex-col items-center justify-center gap-5 px-2 sm:gap-8 sm:px-4">
+            <span className="h-8 w-px bg-[#c5a878] sm:h-12" />
+
+            {["EXPERIENCE", "STRATEGY", "RESULTS"].map((item) => (
+              <p
+                key={item}
+                className="text-center text-[8px] font-medium tracking-[0.12em] text-[#f5f1e8] sm:text-[10px] sm:tracking-[0.18em]"
+                style={{ writingMode: "vertical-rl" }}
+              >
+                {item}
+              </p>
+            ))}
+
+            <span className="h-8 w-px bg-[#c5a878] sm:h-12" />
+          </div>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Principles divider */}
+    <div className="mt-16 border-t border-[#c5a878]/40 pt-10 sm:mt-20 sm:pt-12">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"
+      >
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#d4bd91]">
+            The Foundation of Our Practice
+          </p>
+
+          <h3 className="mt-3 font-serif text-3xl text-[#f5f1e8] sm:text-4xl">
+            Principles in practice.
+          </h3>
+        </div>
+
+        <p className="max-w-sm text-sm leading-6 text-white/45">
+          The standards that shape our legal analysis, representation, and
+          professional conduct.
+        </p>
+      </motion.div>
+
+      {/* Principle cards */}
+      <div className="grid gap-4 md:grid-cols-3">
+        {approachPrinciples.map((item, index) => {
+          const Icon = item.icon;
+
+          return (
+            <motion.article
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: index * 0.12 }}
+              className="group relative flex min-h-[260px] flex-col overflow-hidden border border-[#c5a878]/45 bg-[#101e2d]/75 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#d4bd91] hover:bg-[#17283a] sm:p-8"
+            >
+              {/* Subtle diagonal decoration */}
+              <div className="pointer-events-none absolute -right-5 -top-8 h-32 w-32 rotate-45 border-r border-[#c5a878]/10 transition-colors group-hover:border-[#c5a878]/30" />
+
+              <div className="relative flex items-center justify-between">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#c5a878] bg-[#c5a878]/[0.06] transition-colors duration-300 group-hover:bg-[#c5a878]/15">
+                  <Icon
+                    size={25}
+                    strokeWidth={1.4}
+                    className="text-[#d4bd91]"
+                  />
+                </div>
+
+                <span className="font-serif text-sm italic text-[#c5a878]">
+                  0{index + 1}
+                </span>
+              </div>
+
+              <h4 className="relative mt-7 font-serif text-xl leading-snug text-[#f5f1e8] sm:text-2xl">
+                {item.title}
+              </h4>
+
+              <div className="mt-4 h-px w-9 bg-[#c5a878] transition-all duration-300 group-hover:w-16" />
+
+              <p className="relative mt-4 text-sm leading-7 text-white/55">
+                {item.description}
+              </p>
+
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#c5a878] transition-all duration-500 group-hover:w-full" />
+            </motion.article>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Closing Statement */}
+<section className="relative isolate overflow-hidden border-b border-[#c5a878]/40 bg-[#08121e] px-5 py-20 text-center text-[#f5f1e8] sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+  {/* Background image and overlays */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <img
+      src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=85"
+      alt=""
+      loading="lazy"
+      className="h-full w-full object-cover object-center opacity-20"
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-b from-[#08121e]/90 via-[#0b1420]/80 to-[#08121e]/95" />
+
+    <div className="absolute inset-4 border border-[#c5a878]/20 sm:inset-7" />
+
+    <div className="absolute inset-y-0 left-[12%] hidden w-px bg-[#c5a878]/20 lg:block" />
+    <div className="absolute inset-y-0 right-[12%] hidden w-px bg-[#c5a878]/20 lg:block" />
+
+    <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#c5a878]/70 to-transparent" />
+  </div>
+
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.25 }}
+    transition={{ duration: 0.75 }}
+    className="mx-auto max-w-5xl"
+  >
+    <div className="flex items-center justify-center gap-4">
+      <span className="h-px w-8 bg-[#c5a878] sm:w-12" />
+
+      <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#d4bd91] sm:text-xs sm:tracking-[0.3em]">
+        Siddiqui Law Associates
+      </p>
+
+      <span className="h-px w-8 bg-[#c5a878] sm:w-12" />
+    </div>
+
+    <h2 className="mt-8 font-serif text-3xl italic leading-relaxed text-[#f5f1e8] sm:mt-10 sm:text-4xl lg:text-5xl lg:leading-[1.4]">
+      The pursuit of justice demands preparation, conviction, and unwavering
+      commitment.
+    </h2>
+
+    <div className="mx-auto mt-8 h-px w-16 bg-[#c5a878] sm:mt-10 sm:w-20" />
+
+    <p className="mt-6 text-[9px] uppercase tracking-[0.2em] text-white/40 sm:text-[10px] sm:tracking-[0.28em]">
+      Justice · Integrity · Excellence
+    </p>
+  </motion.div>
+</section>
+
 
       {/* Our Approach */}
-      <section className="px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+      {/* <section className="px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <motion.div
@@ -689,10 +1511,10 @@ function About() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Closing Statement */}
-      <section className="bg-[#111111] px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
+      {/* <section className="bg-[#111111] px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -709,7 +1531,8 @@ function About() {
             unwavering commitment.
           </h2>
         </motion.div>
-      </section>
+      </section> */}
+
     </main>
   );
 }

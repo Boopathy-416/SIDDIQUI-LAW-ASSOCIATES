@@ -561,10 +561,13 @@ function ProfileModal({ member, onClose, onNavigate }) {
             >
               <div className="flex items-center gap-3">
                 <div
-                  className="flex size-9 items-center justify-center
+                  className="flex size-10 items-center justify-center rounded-full p-1
               bg-[#101D2B] font-serif text-xs text-[#D8BD86]"
                 >
-                  SL
+                   <img
+                  src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
+                  alt="SIDDIQUI LAW ASSOCIATES"
+                />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-[#101D2B]">
