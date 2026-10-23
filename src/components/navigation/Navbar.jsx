@@ -211,7 +211,7 @@ function Nav() {
   });
 
   return (
-    <header className="relative z-50 w-full bg-[#111111] text-[#e2e9f1d8]">
+    <header className="relative z-50 w-full bg-[#000000] text-[#e2e9f1d8]">
       {/* Main Navbar */}
       <div className="mx-auto flex min-h-[84px] max-w-7xl items-center justify-between gap-5 border-b border-white/10 px-5 sm:px-8 lg:px-12">
         {/* Brand */}
