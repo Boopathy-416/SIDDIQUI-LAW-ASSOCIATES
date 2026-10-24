@@ -7,7 +7,7 @@
 //   Gavel,
 //   Globe,
 //   Clock,
- 
+
 //   ArrowUpRight,
 // } from "lucide-react";
 
@@ -288,19 +288,17 @@
 //         aria-label="Chat with Siddiqui Law Associates on WhatsApp"
 //         className="fixed bottom-5 right-5 z-50 flex h-12 w-12
 //                    items-center justify-center rounded-full
-//                    opacity-90 text-black 
+//                    opacity-90 text-black
 //                    transition-all duration-300
 //                    hover:scale-110 hover:bg-[#1fba59]
 //                    sm:bottom-6 sm:right-6"
 //       >
-       
+
 //         <img src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792045660/WhatsApp.svg_awuy9n.webp" alt="WhatsApp" />
 //       </a>
 //     </footer>
 //   );
 // }
-
-
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -328,7 +326,7 @@ const FIRM = {
 const footerLinks = {
   Explore: [
     { label: "Home", to: "/" },
-  
+
     { label: "Our Expertise", to: "/our-expertise" },
     { label: "Our Team", to: "/our-team" },
     { label: "Insights", to: "/insights" },
@@ -389,13 +387,13 @@ export default function Footer() {
               <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 Every matter deserves
                 <span className="block font-serif italic font-normal text-[#c5a878]">
-                  thoughtful attention.
+                  thoughtful attention
                 </span>
               </h2>
 
               <p className="mt-5 max-w-xl text-sm leading-7 text-white/60 sm:text-base">
                 If you are facing a legal issue and need clear guidance and
-                committed representation, we are here to help.
+                committed representation, we are here to help
               </p>
             </div>
 
@@ -417,11 +415,15 @@ export default function Footer() {
           {/* Firm identity */}
           <div>
             <Link to="/" className="group inline-flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#c5a878]/50 bg-[#c5a878]/[0.06] transition-colors group-hover:bg-[#c5a878]/15">
-                <Scale
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center   ">
+                {/* <Scale
                   size={28}
                   strokeWidth={1.2}
                   className="text-[#d4bd91]"
+                /> */}
+                <img
+                  src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
+                  alt="SIDDIQUI LAW ASSOCIATES"
                 />
               </div>
 
@@ -546,7 +548,7 @@ export default function Footer() {
                   className="mt-1 shrink-0 text-[#d4bd91]"
                 />
                 <p className="text-sm leading-6 text-white/55">
-                  Contact us to arrange a consultation.
+                  Contact us to arrange a consultation
                 </p>
               </div>
             </div>
@@ -556,7 +558,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:py-7">
           <p className="text-xs leading-6 text-white/40">
-            © {year} Siddiqui Law Associates All rights are reserved website design by Univmarsol.
+            © {year} Siddiqui Law Associates All rights are reserved website
+            design by Univmarsol.
           </p>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">

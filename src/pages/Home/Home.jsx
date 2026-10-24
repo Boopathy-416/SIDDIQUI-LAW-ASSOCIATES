@@ -135,7 +135,7 @@ const approachPrinciples = [
 
 const FIRM = {
   name: "Siddiqui Law Associates",
-  tagline: "Committed to Justice. Dedicated to Your Rights.",
+  tagline: "Committed to Justice Dedicated to Your Rights",
   phone: "+917506926969",
   email: "info@siddiquilawassociates.in",
   enquiryEmail: "adv.rahilsiddiqui@gmail.com",
@@ -293,7 +293,7 @@ const heroSlides = [
     id: "01",
     eyebrow: "SIDDIQUI LAW ASSOCIATES",
     title: "The law is our",
-    highlight: "foundation.",
+    highlight: "foundation",
     description:
       "Over three decades of legal experience, grounded in integrity, preparation, and a commitment to justice.",
     image:
@@ -306,7 +306,7 @@ const heroSlides = [
     id: "02",
     eyebrow: "OUR PRINCIPLES",
     title: "Justice is our",
-    highlight: "mission.",
+    highlight: "mission",
     description:
       "Clear legal guidance. Thoughtful strategy. Principled representation for individuals, families, and businesses.",
     image:
@@ -319,7 +319,7 @@ const heroSlides = [
     id: "03",
     eyebrow: "WORK WITH US",
     title: "Your next step",
-    highlight: "starts here.",
+    highlight: "starts here",
     description:
       "Facing a legal challenge? Speak with our team for clear guidance and committed legal representation.",
     image:
@@ -347,7 +347,7 @@ function HomeHero() {
   };
 
   useEffect(() => {
-    const timer = window.setInterval(nextSlide, 6500);
+    const timer = window.setInterval(nextSlide, 2500);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -397,9 +397,9 @@ function HomeHero() {
                     OUR APPROACH
                   </p>
                   <p className="mt-5 font-serif text-3xl italic leading-snug text-[#65696c]">
-                    Thoughtful counsel.
+                    Thoughtful counsel
                     <br />
-                    Principled action.
+                    Principled action
                   </p>
                 </div>
               </div>
@@ -629,7 +629,7 @@ function About() {
         <h2 className="mt-8 text-5xl font-medium tracking-[-0.055em] text-[#f5f1e8] sm:text-7xl lg:text-[92px] lg:leading-[1.05]">
           About
           <span className="ml-3 font-serif font-normal italic text-[#c5a878]">
-            Us.
+            Us
           </span>
         </h2>
 
@@ -679,16 +679,19 @@ function About() {
           </p>
 
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/60">
-            The Law Is Our Foundation. Justice Is Our Mission.
+            The Law Is Our Foundation Justice Is Our Mission
           </p>
 
           <div className="mt-9 flex items-center gap-4">
-            <div className="flex h-11 w-11 items-center justify-center border border-[#c5a878]/40 rounded-full">
-              <ShieldCheck
+            <div className="flex h-11 w-11 items-center justify-center border p-1 border-[#c5a878]/40 rounded-full">
+              {/* <ShieldCheck
                 size={20}
                 strokeWidth={1.3}
                 className="text-[#d4bd91]"
-              />
+              /> */} <img
+              src="https://res.cloudinary.com/dpm3bum4n/image/upload/v1792076367/laww_qw7wao.svg"
+              alt="SIDDIQUI LAW ASSOCIATES"
+            />
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#f5f1e8]">
@@ -718,12 +721,12 @@ function About() {
           What Defines Us
         </p>
         <h3 className="mt-3 font-serif text-3xl text-[#f5f1e8] sm:text-4xl">
-          Principles that guide us.
+          Principles that guide us
         </h3>
       </div>
 
       <p className="max-w-sm text-sm leading-6 text-white/50">
-        Our commitment to the values that shape our professional practice.
+        Our commitment to the values that shape our professional practice
       </p>
     </motion.div>
 
@@ -787,7 +790,7 @@ function About() {
       className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-7 text-center sm:flex-row sm:text-left"
     >
       <p className="max-w-2xl font-serif text-lg leading-relaxed text-[#d4bd91] sm:text-xl">
-        The Law Is Our Foundation. Justice Is Our Mission.
+        The Law Is Our Foundation Justice Is Our Mission
       </p>
 
       <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/40">
@@ -875,11 +878,11 @@ function About() {
         <h2 className="mt-8 text-4xl font-medium leading-[1.15] tracking-tight text-[#f5f1e8] sm:text-5xl lg:text-6xl">
           A legacy
           <br />
-          of law.
+          of law
           <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
             A commitment
             <br />
-            to justice.
+            to justice
           </span>
         </h2>
 
@@ -890,9 +893,9 @@ function About() {
 
         <div className="mt-12 hidden border-l border-[#c5a878]/30 py-2 pl-5 lg:block">
           <p className="font-serif text-2xl italic leading-relaxed text-white/70">
-            “The law is our foundation.
+            “The law is our foundation
             <br />
-            Justice is our mission.”
+            Justice is our mission”
           </p>
           <p className="mt-4 text-[9px] uppercase tracking-[0.2em] text-[#d4bd91]/70">
             Siddiqui Law Associates
@@ -1057,11 +1060,11 @@ function About() {
         <h2 className="mt-7 text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           Built on
           <br />
-          experience.
+          experience
           <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
             Continued through
             <br className="hidden sm:block" />
-            generations.
+            generations
           </span>
         </h2>
       </div>
@@ -1104,7 +1107,7 @@ function About() {
           Our Journey
         </p>
         <h3 className="mt-3 font-serif text-3xl sm:text-4xl">
-          A tradition of commitment.
+          A tradition of commitment
         </h3>
       </div>
 
@@ -1152,7 +1155,7 @@ function About() {
     {/* Closing statement */}
     <div className="mt-10 flex flex-col gap-4 border border-[#c5a878]/20 bg-[#0b1420]/50 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
       <p className="max-w-2xl font-serif text-xl italic leading-relaxed text-[#d4bd91] sm:text-2xl">
-        A legacy built on trust. A future guided by justice.
+        A legacy built on trust A future guided by justice
       </p>
 
       <span className="text-[9px] uppercase tracking-[0.22em] text-white/40">
@@ -1263,9 +1266,9 @@ function About() {
             </p>
 
             <h3 className="mt-3 max-w-sm font-serif text-2xl leading-snug text-[#f5f1e8] sm:text-3xl">
-              Preparation with purpose.
+              Preparation with purpose
               <span className="block italic text-[#d4bd91]">
-                Advocacy with conviction.
+                Advocacy with conviction
               </span>
             </h3>
           </div>
@@ -1312,7 +1315,7 @@ function About() {
           </p>
 
           <h3 className="mt-3 font-serif text-3xl text-[#f5f1e8] sm:text-4xl">
-            Principles in practice.
+            Principles in practice
           </h3>
         </div>
 
