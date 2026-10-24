@@ -481,7 +481,7 @@ function HomeHero() {
               >
                 {slide.layout === "contact"
                   ? "Book a Consultation"
-                  : "Contact the Firm"}
+                  : "Contact the Team"}
                 <ArrowUpRight
                   size={17}
                   className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -489,7 +489,7 @@ function HomeHero() {
               </a>
 
               <Link
-                to="/the-team"
+                to="/our-team"
                 className={`group inline-flex items-center gap-3 py-3 text-sm transition ${
                   isLight
                     ? "text-[#122337] hover:text-[#967748]"
@@ -518,7 +518,7 @@ function HomeHero() {
                 isLight ? "text-[#122337]/55" : "text-white/50"
               }`}
             >
-              EXPLORE THE FIRM
+              EXPLORE THE Team & OUR PRACTICE AREAS
             </p>
 
             <div className="flex items-center gap-3">
