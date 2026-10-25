@@ -439,11 +439,11 @@ function Nav() {
         >
           <div className="mx-auto flex max-w-7xl flex-col">
             <Link
-              to="/the-firm"
+              to="/"
               onClick={closeMenus}
               className="border-b border-white/10 py-4 text-sm text-white/80 hover:text-[#C5A880]"
             >
-              The Firm
+              About Us
             </Link>
 
             {/* Mobile Expertise */}

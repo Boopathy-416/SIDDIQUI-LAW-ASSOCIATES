@@ -43,11 +43,9 @@ import articles from "./Data/Article.json";
 //   );
 // }
 
-
 function ArticleHero({ article }) {
   return (
     <section className="relative isolate overflow-hidden border-b border-[#c5a878]/35 bg-[#0b1420] text-[#f5f1e8]">
-
       {/* Article background image */}
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center opacity-30"
@@ -69,7 +67,6 @@ function ArticleHero({ article }) {
       </div>
 
       <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-12">
-
         {/* Back navigation */}
         <Link
           to="/insights"
@@ -82,13 +79,11 @@ function ArticleHero({ article }) {
               className="transition-transform duration-300 group-hover:-translate-x-1"
             />
           </span>
-
           All insights
         </Link>
 
         {/* Article heading */}
         <div className="mt-9 max-w-5xl">
-
           {/* Category */}
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[#c5a878]" />
@@ -131,7 +126,6 @@ function ArticleHero({ article }) {
     </section>
   );
 }
-
 
 // function ArticleBody({ article }) {
 //   return (
@@ -218,8 +212,6 @@ function ArticleBody({ article }) {
   );
 }
 
-
-
 // function ArticleNavigation({ article, index }) {
 //   const previous = articles[index - 1];
 //   const next = articles[index + 1];
@@ -267,7 +259,6 @@ function ArticleBody({ article }) {
 //     </nav>
 //   );
 // }
-
 
 function ArticleNavigation({ article, index }) {
   const previous = articles[index - 1];
@@ -332,7 +323,6 @@ function ArticleNavigation({ article, index }) {
     </nav>
   );
 }
-
 
 // export default function ArticleDetails() {
 //   const { slug } = useParams();
@@ -433,7 +423,6 @@ function ArticleNavigation({ article, index }) {
 //   );
 // }
 
-
 export default function ArticleDetails() {
   const { slug } = useParams();
 
@@ -467,8 +456,8 @@ export default function ArticleDetails() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-white/55">
-            This article may have been moved or is no longer available.
-            Explore our insights for more legal perspectives and updates.
+            This article may have been moved or is no longer available. Explore
+            our insights for more legal perspectives and updates.
           </p>
 
           <Link
@@ -515,6 +504,50 @@ export default function ArticleDetails() {
 
           <ArticleBody article={article} />
 
+          {/* Original source link */}
+          {article.sourceUrl && (
+            <section className="relative mt-10 overflow-hidden border border-[#c5a878]/25 bg-[#101e2d] p-5 sm:p-7">
+              <span
+                aria-hidden="true"
+                className="absolute left-0 top-0 h-full w-[2px] bg-[#c5a878]"
+              />
+
+              <div className="flex items-start gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#c5a878]/30 text-[#c5a878]">
+                  <ArrowUpRight size={20} strokeWidth={1.5} />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c5a878]">
+                    Original Source
+                  </p>
+
+                  <h2 className="mt-2 font-serif text-xl font-medium text-[#f5f1e8] sm:text-2xl">
+                    Read the Full Report
+                  </h2>
+
+                  <p className="mt-3 text-sm leading-7 text-white/55">
+                    Read the original news report for additional details and
+                    coverage from Hindustan Times.
+                  </p>
+
+                  <a
+                    href={article.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-5 inline-flex items-center gap-2 border-b border-[#c5a878]/50 pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#d4bd91] transition-colors duration-300 hover:border-[#f5f1e8] hover:text-[#f5f1e8]"
+                  >
+                    Read on Hindustan Times
+                    <ArrowUpRight
+                      size={15}
+                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </a>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Legal disclaimer */}
           <div className="relative mt-10 border border-[#c5a878]/20 bg-[#101e2d] px-5 py-5 sm:px-6">
             <span
@@ -537,8 +570,8 @@ export default function ArticleDetails() {
                 <p className="mt-3 text-sm leading-7 text-white/55">
                   This article is provided for general informational purposes
                   only and does not constitute legal advice. The appropriate
-                  legal position depends on the circumstances of each matter
-                  and the applicable law.
+                  legal position depends on the circumstances of each matter and
+                  the applicable law.
                 </p>
               </div>
             </div>
