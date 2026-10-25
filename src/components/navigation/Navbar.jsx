@@ -246,7 +246,7 @@ function Nav() {
             to="/"
             className={linkStyle(path === "/")}
           >
-            About Us
+            Home
           </Link>
 
           {/* Expertise Dropdown */}
@@ -443,7 +443,7 @@ function Nav() {
               onClick={closeMenus}
               className="border-b border-white/10 py-4 text-sm text-white/80 hover:text-[#C5A880]"
             >
-              About Us
+              Home
             </Link>
 
             {/* Mobile Expertise */}
