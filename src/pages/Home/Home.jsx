@@ -317,7 +317,7 @@ const heroSlides = [
   },
   {
     id: "03",
-    eyebrow: "WORK WITH US",
+    eyebrow: "CONSULT WITH US",
     title: "Your next step",
     highlight: "starts here",
     description:
@@ -347,7 +347,7 @@ function HomeHero() {
   };
 
   useEffect(() => {
-    const timer = window.setInterval(nextSlide, 2500);
+    const timer = window.setInterval(nextSlide, 3500);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -376,8 +376,8 @@ function HomeHero() {
           <div
             className={`absolute inset-0 ${
               isLight
-                ? "bg-[#f5f1e8]/90"
-                : "bg-[#091523]/75"
+                ? "bg-[#f5f1e8]/50"
+                : "bg-[#091523]/50"
             }`}
           />
 
