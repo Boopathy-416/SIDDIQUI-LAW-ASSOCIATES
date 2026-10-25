@@ -915,7 +915,7 @@ function About() {
         <div className="absolute bottom-0 left-0 h-12 w-12 border-b border-l border-[#c5a878]/60" />
 
         <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d4bd91]">
-          Our Firm · Our Commitment
+          The About · Our Commitment
         </p>
 
         <div className="my-6 h-px bg-gradient-to-r from-[#c5a878]/60 via-white/10 to-transparent" />
