@@ -1544,7 +1544,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden bg-[#f7f5f0] text-[#122337]">
       <HomeHero />
-      <About />
+      {/* <About /> */}
     </main>
   );
 }
