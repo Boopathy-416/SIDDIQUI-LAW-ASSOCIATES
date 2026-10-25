@@ -382,7 +382,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <FooterEyebrow>Work With Us</FooterEyebrow>
+              <FooterEyebrow>Connect with us</FooterEyebrow>
 
               <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 Every matter deserves
@@ -401,7 +401,7 @@ export default function Footer() {
               to="/contact"
               className="group inline-flex min-h-14 shrink-0 items-center justify-center gap-5 self-start border border-[#c5a878] bg-[#c5a878] px-6 py-4 text-sm font-semibold text-[#0b1420] transition-colors duration-300 hover:bg-transparent hover:text-[#d4bd91] lg:self-center"
             >
-              Book a Consultation
+              Free Consultation
               <ArrowUpRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"

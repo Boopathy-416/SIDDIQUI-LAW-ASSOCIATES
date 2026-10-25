@@ -246,7 +246,7 @@ function Nav() {
             to="/"
             className={linkStyle(path === "/")}
           >
-            The Home
+            About Us
           </Link>
 
           {/* Expertise Dropdown */}

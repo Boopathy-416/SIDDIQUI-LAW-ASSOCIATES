@@ -69,13 +69,7 @@ const teamMembers = [
     ],
 
     experience: [
-      "Managing Partner, Siddiqui Law Associates. ",
-      "Practices before the Bombay High Court, Sessions Court, Metropolitan Magistrate Courts, Consumer Commissions, Motor Accident Claims Tribunal, Charity Commission, and NCLT. ",
-      "Empanelled Advocate | National Legal Services Authority (NALSA), Bombay High Court. ",
-      "Empanelled Advocate | Bank of India. ",
-      "Empanelled Advocate | Mumbai District Central Cooperative Bank Ltd. ",
-      "Empanelled Advocate | Insurance Samadhan. ",
-      "Additional Special Court Receiver, appointed by the Hon’ble Bombay High Court in legal practice.",
+      "Siddiqui Law Associates, Managing Partner | Practices before the Bombay High Court | Sessions Court | Metropolitan Magistrate Courts | Consumer Commissions | MACT | NCLT Empanelled Advocate NALSA Insurance & Bank | Bombay High Court | Additional Special Court Receiver, appointed by the Hon’ble Bombay High Court in legal practice."
     ],
   },
 

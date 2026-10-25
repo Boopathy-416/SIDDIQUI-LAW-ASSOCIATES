@@ -93,7 +93,7 @@ const pillars = [
 
 const storyMilestones = [
   {
-    year: "1994",
+    year: "1984",
     title: "The Beginning",
     description:
       "Advocate Parwez Ahmed Siddiqui began his legal practice in Criminal Litigation, building his work on hard work, honest advice, and a strong sense of duty.",
@@ -480,7 +480,7 @@ function HomeHero() {
                 }`}
               >
                 {slide.layout === "contact"
-                  ? "Book a Consultation"
+                  ? "Free Consultation"
                   : "Contact the Team"}
                 <ArrowUpRight
                   size={17}
@@ -975,7 +975,7 @@ function About() {
             </h2>
 
             <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              Our story began in 1994, when Advocate Parwez Ahmed Siddiqui
+              Our story began in 1984, when Advocate Parwez Ahmed Siddiqui
               started practicing law. He began with Criminal Litigation, where
               he built a reputation on hard work, honest advice, and a deep
               sense of duty to the people who trusted him with their liberty and
@@ -1064,14 +1064,14 @@ function About() {
           <span className="mt-2 block font-serif font-normal italic text-[#c5a878]">
             Continued through
             <br className="hidden sm:block" />
-            generations
+            {" "} generations
           </span>
         </h2>
       </div>
 
       <div className="max-w-2xl space-y-5 text-sm leading-8 text-white/65 sm:text-base sm:leading-9">
         <p>
-          Our story began in 1994, when Advocate Parwez Ahmed Siddiqui
+          Our story began in 1984, when Advocate Parwez Ahmed Siddiqui
           started practicing law. He began with Criminal Litigation, where
           he built a reputation on hard work, honest advice, and a deep
           sense of duty to the people who trusted him with their liberty and
