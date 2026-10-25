@@ -391,10 +391,10 @@ function HomeHero() {
 
           {slide.layout === "split" && (
             <div className="absolute right-0 -top-35 hidden h-full w-[35%] border-l border-[#967748]/25 lg:block">
-              <div className="flex h-full items-end justify-center p-12">
+              <div className="flex  h-full items-end justify-center p-12">
                 <div className="max-w-xs border-l-2 border-[#967748] pl-6">
-                  <p className="text-xs tracking-[0.24em] text-[#967748]">
-                    OUR APPROACH
+                  <p className="text-xs tracking-[0.24em]  text-[#967748]">
+                    OUR APPROACH 
                   </p>
                   <p className="mt-5 font-serif text-3xl italic leading-snug text-[#65696c]">
                     Thoughtful counsel
