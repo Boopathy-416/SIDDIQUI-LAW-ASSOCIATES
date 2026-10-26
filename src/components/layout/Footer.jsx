@@ -559,7 +559,7 @@ export default function Footer() {
         <div className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:py-7">
           <p className="text-xs leading-6 text-white/40">
             © {year} Siddiqui Law Associates All rights are reserved website
-            design by Univmarsol.
+            design by UNIVMARSOL.
           </p>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
