@@ -289,7 +289,7 @@
 //         className="fixed bottom-5 right-5 z-50 flex h-12 w-12
 //                    items-center justify-center rounded-full
 //                    opacity-90 text-black
-//                    transition-all duration-300
+//                    transition-all duration-600
 //                    hover:scale-110 hover:bg-[#1fba59]
 //                    sm:bottom-6 sm:right-6"
 //       >
@@ -313,6 +313,7 @@ import {
   Clock,
   ArrowUp,
 } from "lucide-react";
+import WhatsAppFloat from "./WhatsAppFloat";
 
 const FIRM = {
   name: "Siddiqui Law Associates",
@@ -367,7 +368,7 @@ export default function Footer() {
         <div className="absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-[#c5a878]/[0.045] blur-[130px]" />
         <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#c5a878]/30 to-transparent" />
       </div>
-
+<WhatsAppFloat />
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
         {/* Consultation banner */}
         <motion.div
