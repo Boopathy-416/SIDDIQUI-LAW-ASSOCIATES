@@ -69,7 +69,7 @@ const teamMembers = [
     ],
 
     experience: [
-      "Siddiqui Law Associates, Managing Partner | Practices before the Bombay High Court | Sessions Court | Metropolitan Magistrate Courts | Consumer Commissions | MACT | NCLT Empanelled Advocate NALSA Insurance & Bank | Bombay High Court | Additional Special Court Receiver, appointed by the Hon’ble Bombay High Court in legal practice."
+      "Managing Partner at Siddiqui Law Associates, with extensive court experience and empanelments with NALSA, banks and insurance companies. Appointed Special Court Receiver by the Bombay High Court."
     ],
   },
 
@@ -98,9 +98,7 @@ const teamMembers = [
     ],
 
     experience: [
-      "Associate Siddiqui Law Associates: Criminal litigation, legal research, drafting, case preparation, and court appearances. ",
-      "Empanelled Court Commissioner | Esplanade Court, Mumbai. ",
-      "Additional Special Court Receiver | appointed by the Hon’ble Bombay High Court.",
+      "Associate at Siddiqui Law Associates, focused on criminal litigation, strategic legal research and courtroom advocacy. Empanelled Court Commissioner, Esplanade Court, Mumbai, and Additional Special Court Receiver appointed by the Hon’ble Bombay High Court.",
     ],
   },
 
