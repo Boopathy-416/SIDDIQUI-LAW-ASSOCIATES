@@ -69,7 +69,7 @@ const teamMembers = [
     ],
 
     experience: [
-      "Managing Partner at Siddiqui Law Associates, with extensive court experience and empanelments with NALSA, banks and insurance companies. Appointed Special Court Receiver by the Bombay High Court."
+      "Managing Partner at Siddiqui Law Associates, with extensive court experience and empanelments with NALSA, banks and insurance companies | Appointed Special Court Receiver by the Bombay High Court"
     ],
   },
 
@@ -98,7 +98,7 @@ const teamMembers = [
     ],
 
     experience: [
-      "Associate at Siddiqui Law Associates, focused on criminal litigation, strategic legal research and courtroom advocacy. Empanelled Court Commissioner, Esplanade Court, Mumbai, and Additional Special Court Receiver appointed by the Hon’ble Bombay High Court.",
+      "Associate at Siddiqui Law Associates, focused on criminal litigation, strategic legal research and courtroom advocacy | Empanelled Court Commissioner, Esplanade Court, Mumbai, and Additional Special Court Receiver appointed by the Hon’ble Bombay High Court",
     ],
   },
 
@@ -111,7 +111,7 @@ const teamMembers = [
     initials: "ES",
     accent: "from-slate-300 via-stone-200 to-neutral-400",
 
-    bio: "Advocate Eram M. Sayyad is a second-generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. His practice focuses on civil law and litigation. He brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
+    bio: "Advocate Eram M. Sayyad is a second-generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. His practice focuses on civil law and litigation | He brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
 
     expertise: [
       "Civil Law and Litigation",
