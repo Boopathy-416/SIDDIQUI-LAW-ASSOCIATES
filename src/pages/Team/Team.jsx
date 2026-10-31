@@ -773,19 +773,19 @@ function ProfileCard({ member, onOpen, index }) {
         >
           {member.shortName}
         </h3>
-         <div
+         {/* <div
           className="mt-3 flex flex-wrap items-center gap-2
       text-xs text-white/75 sm:text-sm"
         >
           <span>{member.qualification}</span>
           <span className="text-[#B8955A]">•</span>
           <span>{member.experience} in practice</span>
-        </div>
+        </div> */}
         <div
           className="mt-3 flex flex-wrap items-center gap-2
       text-xs text-white/75 sm:text-sm"
         >
-          {/* <span>{member.qualification}</span> */}
+          <span>{member.qualification}</span>
         </div>
 
         <div
