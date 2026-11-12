@@ -664,7 +664,7 @@ const teamMembers = [
     photo: "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
     accent: "from-slate-300 via-stone-400 to-neutral-400",
 
-    bio: "Advocate Eram M. Sayyad is a second-generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. His practice focuses on civil law and litigation. He brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
+    bio: "Advocate Eram M. Sayyad is a second generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. Her practice focuses on civil law and litigation. She brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
 
     expertise: [
       "Civil Law and Litigation",
