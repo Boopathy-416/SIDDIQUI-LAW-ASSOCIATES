@@ -521,12 +521,12 @@ function About() {
     >
       {/* Left: About heading */}
       <div>
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           <span className="h-px w-10 bg-[#c5a878]" />
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d4bd91] sm:text-xs">
-            Siddiqui Law Associates · Mumbai
+           
           </p>
-        </div>
+        </div> */}
 
         <h2 className="mt-8 text-5xl font-medium tracking-[-0.055em] text-[#f5f1e8] sm:text-7xl lg:text-[92px] lg:leading-[1.05]">
           About
@@ -695,10 +695,10 @@ function About() {
         The Law Is Our Foundation Justice Is Our Mission
       </p>
 
-      <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/40">
+      {/* <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/40">
         <span className="h-px w-8 bg-[#c5a878]/70" />
         Mumbai · India
-      </div>
+      </div> */}
     </motion.div>
   </div>
 </section>

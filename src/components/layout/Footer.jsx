@@ -444,12 +444,12 @@ export default function Footer() {
               representation.
             </p>
 
-            <div className="mt-7 flex items-center gap-3">
+            {/* <div className="mt-7 flex items-center gap-3">
               <span className="h-px w-9 bg-[#c5a878]" />
               <span className="text-[9px] uppercase tracking-[0.2em] text-white/40">
                 Mumbai · India
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation */}
