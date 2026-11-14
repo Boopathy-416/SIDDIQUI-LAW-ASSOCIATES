@@ -192,7 +192,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <span className="h-px w-9 bg-[#c5a878]" />
                 <p className="text-[10px] font-semibold uppercase tracking-[0.27em] text-[#d4bd91] sm:text-xs">
-                  Get In Touch · Mumbai, India
+                  Get In Touch 
                 </p>
               </div>
 
