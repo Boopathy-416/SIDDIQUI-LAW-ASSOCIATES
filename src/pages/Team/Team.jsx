@@ -603,7 +603,7 @@ const teamMembers = [
     photo: "https://res.cloudinary.com/da6mndffu/image/upload/v1793339030/ADV_RAHIL_SIDDIQUI_pccqct.jpg",
     accent: "from-zinc-900 via-slate-400 to-slate-100",
 
-    bio: "Advocate Rahil Ahmed Siddiqui is a second-generation advocate and litigation-focused legal practitioner enrolled with the Bar Council of Maharashtra and Goa since 2019. He practices before the Hon’ble Bombay High Court and subordinate courts in Mumbai, with a focus on criminal litigation, civil and commercial disputes, constitutional remedies, and other areas of law. His approach combines strategic thinking, meticulous preparation, precise drafting, and considered legal analysis.",
+    bio: "Advocate Mr. Rahil Ahmed Siddiqui is a second-generation advocate and litigation-focused legal practitioner enrolled with the Bar Council of Maharashtra and Goa since 2019. He practices before the Hon’ble Bombay High Court and subordinate courts in Mumbai, with a focus on criminal litigation, civil and commercial disputes, constitutional remedies, and other areas of law. His approach combines strategic thinking, meticulous preparation, precise drafting, and considered legal analysis.",
 
     expertise: [
       "Criminal Litigation",

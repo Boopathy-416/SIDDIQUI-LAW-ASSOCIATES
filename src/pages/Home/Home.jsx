@@ -96,7 +96,7 @@ const storyMilestones = [
     year: "1984",
     title: "The Beginning",
     description:
-      "Advocate Parwez Ahmed Siddiqui began his legal practice in Criminal Litigation, building his work on hard work, honest advice, and a strong sense of duty.",
+      "Advocate Mr. Parwez Ahmed Siddiqui began his legal practice in Criminal Litigation, building his work on hard work, honest advice, and a strong sense of duty.",
   },
   {
     year: "A New Generation",
@@ -193,7 +193,7 @@ function SectionHeading({ eyebrow, title, highlight, light = false }) {
 const heroSlides = [
   {
     id: "01",
-    eyebrow: "SIDDIQUI LAW ASSOCIATES",
+    eyebrow: "",
     title: "The law is our",
     highlight: "foundation",
     description:
@@ -206,7 +206,7 @@ const heroSlides = [
   },
   {
     id: "02",
-    eyebrow: "OUR PRINCIPLES",
+    eyebrow: "",
     title: "Justice is our",
     highlight: "mission",
     description:
@@ -219,7 +219,7 @@ const heroSlides = [
   },
   {
     id: "03",
-    eyebrow: "CONSULT WITH US",
+    eyebrow: "",
     title: "Your next step",
     highlight: "starts here",
     description:
@@ -703,53 +703,7 @@ function About() {
   </div>
 </section>
 
-      {/* Firm Introduction */}
-      {/* <section className="px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-xs uppercase tracking-[0.22em] text-[#967748]">
-              Who We Are
-            </p>
-
-            <h2 className="mt-5 text-3xl font-medium leading-snug sm:text-4xl lg:text-5xl">
-              A legacy of law
-              <span className="block font-serif italic font-normal text-[#967748]">
-                A commitment to justice
-              </span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9"
-          >
-            <p>
-              Siddiqui Law Associates is a Mumbai-based law firm with over three
-              decades of experience in the courts. Our practice is rooted in
-              Criminal Litigation and extends across corporate, commercial,
-              civil, property, family, and regulatory law.
-            </p>
-
-            <p>
-              We appear in all courts in Mumbai and in courts across other
-              states.
-            </p>
-
-            <p className="border-l-2 border-[#c5a878] pl-5 font-serif text-xl italic leading-8 text-[#122337] sm:text-2xl">
-              We do not treat clients as case numbers. We listen carefully,
-              explain clearly, and fight diligently.
-            </p>
-          </motion.div>
-        </div>
-      </section> */}
+   
       
 {/* Firm Introduction */}
 <section className="relative isolate overflow-hidden bg-[#0b1420] px-5 py-20 text-[#f5f1e8] sm:px-8 sm:py-28 lg:px-12 lg:py-32">
@@ -855,82 +809,7 @@ function About() {
 </section>
 
 
-      {/* Our Story */}
-      {/* <section className="border-y border-[#e4e0d7] bg-white px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <p className="text-xs uppercase tracking-[0.22em] text-[#967748]">
-              Our Story
-            </p>
 
-            <h2 className="mt-5 text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl">
-              Built on experience
-              <span className="block font-serif italic font-normal text-[#967748]">
-                Continued through generations
-              </span>
-            </h2>
-
-            <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              Our story began in 1984, when Advocate Parwez Ahmed Siddiqui
-              started practicing law. He began with Criminal Litigation, where
-              he built a reputation on hard work, honest advice, and a deep
-              sense of duty to the people who trusted him with their liberty and
-              their future.
-            </p>
-
-            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              Today, his son Advocate Rahil Ahmed Siddiqui and his daughters,
-              Advocate Mrs. Huma A. Shaikh and Advocate Eram M. Sayyad, practice
-              alongside him. We grew up in a home where law was a way of life,
-              and we learned early that behind every case file is a person, a
-              family, or a livelihood.
-            </p>
-
-            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              Today, the firm combines the experience of its founder with the
-              energy of a second generation of advocates. As the practice has
-              grown, so has the range of matters we handle, allowing us to serve
-              individuals, families, and businesses under one roof.
-            </p>
-            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              That is why we do not treat clients as case numbers. We listen
-              carefully, explain clearly, and fight diligently.
-            </p>
-          </motion.div>
-
-          <div className="mt-14 border-t border-[#e4e0d7]">
-            {storyMilestones.map((item, index) => (
-              <motion.article
-                key={item.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="grid gap-3 border-b border-[#e4e0d7] py-8 sm:grid-cols-[180px_1fr] sm:gap-10 sm:py-10"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[#967748]">
-                  {item.year}
-                </p>
-
-                <div>
-                  <h3 className="text-xl font-medium sm:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-500 sm:text-base sm:leading-8">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
 
 {/* Our Story */}
@@ -973,7 +852,7 @@ function About() {
 
       <div className="max-w-2xl space-y-5 text-sm leading-8 text-white/65 sm:text-base sm:leading-9">
         <p>
-          Our story began in 1984, when Advocate Parwez Ahmed Siddiqui
+          Our story began in 1984, when Advocate Mr. Parwez Ahmed Siddiqui
           started practicing law. He began with Criminal Litigation, where
           he built a reputation on hard work, honest advice, and a deep
           sense of duty to the people who trusted him with their liberty and
@@ -981,8 +860,8 @@ function About() {
         </p>
 
         <p>
-          Today, his son Advocate Rahil Ahmed Siddiqui and his daughters,
-          Advocate Advocate Ms. Huma Shaikh and Advocate Ms. Eram M. Sayyed, practice
+          Today, his son Advocate Mr. Rahil Ahmed Siddiqui and his daughters,
+          Advocate Ms. Huma A. Shaikh and Advocate Ms. Eram M. Sayyed, practice
           alongside him. We grew up in a home where law was a way of life,
           and we learned early that behind every case file is a person, a
           family, or a livelihood.
