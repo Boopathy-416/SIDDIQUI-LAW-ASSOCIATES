@@ -102,7 +102,7 @@ const storyMilestones = [
     year: "A New Generation",
     title: "A Family of Advocates",
     description:
-      "Advocate Rahil Ahmed Siddiqui, Advocate Mrs. Huma A. Shaikh, and Advocate Eram M. Sayyad joined the practice, continuing the family's commitment to the legal profession.",
+      "Advocate Mr. Rahil Ahmed Siddiqui,  Advocate Ms. Huma Shaikh, and Advocate Ms. Eram M. Sayyed joined the practice, continuing the family's commitment to the legal profession.",
   },
   {
     year: "Today",
@@ -187,104 +187,6 @@ function SectionHeading({ eyebrow, title, highlight, light = false }) {
     </>
   );
 }
-
-// function HomeHero() {
-//   return (
-//     <section className="relative isolate flex min-h-[650px] items-center overflow-hidden bg-[#0c1826] sm:min-h-[740px] lg:min-h-[800px]">
-//       {/* Hero Background Image */}
-//       <img
-//         src={homeImages.hero}
-//         alt="Contemporary architecture in Mumbai"
-//         fetchPriority="high"
-//         className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
-//       />
-
-//       {/* Background Overlays */}
-//       <div className="absolute inset-0 -z-20 bg-[#091523]/65" />
-//       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#091523]/95 via-[#091523]/75 to-[#091523]/20" />
-
-//       {/* Decorative Divider */}
-//       <div className="absolute inset-y-0 right-[12%] hidden w-px bg-white/15 lg:block" />
-
-//       {/* Hero Content */}
-//       <div className="mx-auto w-full max-w-7xl px-5 pb-32 pt-24 sm:px-8 sm:pb-36 lg:px-12">
-//         <motion.div
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, ease: "easeOut" }}
-//           className="max-w-4xl"
-//         >
-//           <Eyebrow light>Justice | Integrity | Excellence</Eyebrow>
-
-//           {/* Main Heading */}
-//           <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] text-[#F5F1E8]/80 sm:text-7xl lg:text-[92px]">
-//             Siddiqui Law Associates
-//             <br />
-//             <span className="font-serif italic font-normal text-[#d4bd91]">
-//               Advocates & Legal Consultants
-//             </span>
-//           </h1>
-
-//           {/* Primary Introduction */}
-//           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/90 sm:text-xl sm:leading-9">
-//             Siddiqui Law Associates is a Mumbai-based law firm with over three
-//             decades of experience in the courts, rooted in Criminal Litigation
-//             and extending across diverse areas of law.
-//           </p>
-
-//           {/* Firm Overview */}
-//           <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-//             We appear in all courts in Mumbai and across other states, guided by
-//             meticulous preparation, clear advice, and professional ethics.
-//           </p>
-
-//           {/* Call-to-Action Buttons */}
-//           <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-//             <a
-//               href={`https://wa.me/${FIRM.phone.replace(/\D/g, "")}`}
-//               target="_blank"
-//               rel="noreferrer"
-//               className="group inline-flex min-h-14 items-center gap-5 bg-[#c5a878] px-6 py-4 text-sm font-semibold text-[#111e2c] transition hover:bg-[#e0cba4]"
-//             >
-//               Contact the Firm
-//               <ArrowUpRight
-//                 size={18}
-//                 className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-//               />
-//             </a>
-
-//             <Link
-//               to="/the-team"
-//               className="group inline-flex items-center gap-3 py-3 text-sm text-white/90 transition hover:text-[#d4bd91]"
-//             >
-//               Discover the Team
-//               <ArrowRight
-//                 size={17}
-//                 className="transition-transform group-hover:translate-x-1"
-//               />
-//             </Link>
-//           </div>
-//         </motion.div>
-//       </div>
-
-//       {/* Bottom Information Bar */}
-//       <div className="absolute bottom-0 left-0 right-0 border-t border-white/20">
-//         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-//           <p className="text-xs leading-6 text-white/65 sm:text-sm">
-//             Legal Services · Mumbai, India
-//           </p>
-
-//           <div className="flex items-center gap-3">
-//             <span className="h-px w-12 bg-[#c5a878]" />
-//             <span className="text-xs tracking-[0.2em] text-white">
-//               16 PRACTICE AREAS
-//             </span>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 
 
@@ -1080,7 +982,7 @@ function About() {
 
         <p>
           Today, his son Advocate Rahil Ahmed Siddiqui and his daughters,
-          Advocate Mrs. Huma A. Shaikh and Advocate Eram M. Sayyad, practice
+          Advocate Advocate Ms. Huma Shaikh and Advocate Ms. Eram M. Sayyed, practice
           alongside him. We grew up in a home where law was a way of life,
           and we learned early that behind every case file is a person, a
           family, or a livelihood.

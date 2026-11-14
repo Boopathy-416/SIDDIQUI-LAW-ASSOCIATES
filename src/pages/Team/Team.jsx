@@ -596,7 +596,7 @@ import {
 const teamMembers = [
   {
     id: 1,
-    name: "Advocate Rahil Ahmed Siddiqui",
+    name: "Advocate Mr. Rahil Ahmed Siddiqui",
     shortName: "Rahil Ahmed Siddiqui",
     role: "Managing Partner",
     qualification: "B.L.S., LL.B., LL.M. in IT & IPR",
@@ -626,14 +626,14 @@ const teamMembers = [
 
   {
     id: 2,
-    name: "Advocate Huma A. Shaikh",
+    name: "Advocate Ms. Huma A. Shaikh",
     shortName: "Huma A. Shaikh",
     role: "Associate",
     qualification: "B.A.F., LL.B.",
     photo: "https://res.cloudinary.com/da6mndffu/image/upload/v1793339027/ADV_HUMA_fqqvad.jpg",
     accent: "from-stone-300 via-neutral-600 to-stone-400",
 
-    bio: "Advocate Huma A. Shaikh is a second-generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa since 2018 | She specialises in criminal law and litigation and maintains an active practice before the Hon’ble Bombay High Court, Sessions Court, and Chief Metropolitan Magistrate Court at Esplanade, Mumbai. Her practice is distinguished by rigorous procedural compliance, precise legal work, and thorough case preparation.",
+    bio: "Advocate Ms. Huma A. Shaikh is a second-generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa since 2018 | She specialises in criminal law and litigation and maintains an active practice before the Hon’ble Bombay High Court, Sessions Court, and Chief Metropolitan Magistrate Court at Esplanade, Mumbai. Her practice is distinguished by rigorous procedural compliance, precise legal work, and thorough case preparation.",
 
     expertise: [
       "Criminal Law and Litigation",
@@ -657,14 +657,14 @@ const teamMembers = [
 
   {
     id: 3,
-    name: "Advocate Eram M. Sayyad",
-    shortName: "Eram M. Sayyad",
+    name: "Advocate Ms. Eram M. Sayyed",
+    shortName: "Eram M. Sayyed",
     role: "Associate",
     qualification: "B.M.S., LL.B.",
     photo: "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
     accent: "from-slate-300 via-stone-400 to-neutral-400",
 
-    bio: "Advocate Eram M. Sayyad is a second generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. Her practice focuses on civil law and litigation. She brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
+    bio: "Advocate Ms. Eram M. Sayyed is a second generation advocate at Siddiqui Law Associates, enrolled with the Bar Council of Maharashtra and Goa in 2014. Her practice focuses on civil law and litigation. She brings diligence to legal research, drafting, courtroom advocacy, procedural compliance, and strategic case preparation, supporting the firm’s commitment to dependable and high-calibre legal services.",
 
     expertise: [
       "Civil Law and Litigation",
