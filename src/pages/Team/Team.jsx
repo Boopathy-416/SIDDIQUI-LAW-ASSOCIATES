@@ -597,7 +597,7 @@ const teamMembers = [
   {
     id: 1,
     name: "Advocate Mr. Rahil Ahmed Siddiqui",
-    shortName: "Rahil Ahmed Siddiqui",
+    shortName: "Advocate Mr. Rahil Ahmed Siddiqui",
     role: "Managing Partner",
     qualification: "B.L.S., LL.B., LL.M. in IT & IPR",
     photo: "https://res.cloudinary.com/da6mndffu/image/upload/v1793339030/ADV_RAHIL_SIDDIQUI_pccqct.jpg",
@@ -627,7 +627,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Advocate Ms. Huma A. Shaikh",
-    shortName: "Huma A. Shaikh",
+    shortName: "Advocate Ms. Huma A. Shaikh",
     role: "Associate",
     qualification: "B.A.F., LL.B.",
     photo: "https://res.cloudinary.com/da6mndffu/image/upload/v1793339027/ADV_HUMA_fqqvad.jpg",
@@ -658,7 +658,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Advocate Ms. Eram M. Sayyed",
-    shortName: "Eram M. Sayyed",
+    shortName: "Advocate Ms. Eram M. Sayyed",
     role: "Associate",
     qualification: "B.M.S., LL.B.",
     photo: "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
