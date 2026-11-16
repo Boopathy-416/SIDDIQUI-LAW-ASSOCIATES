@@ -526,10 +526,10 @@ function About() {
 
               <div className="mt-8 max-w-xl">
                 <p className="font-serif text-2xl leading-snug text-[#f5f1e8] sm:text-3xl lg:text-4xl">
-                  Consult clear advice & Practical solutions .
+                  Consult clear advice & Practical solutions 
                 </p>
                 <p className="mt-2 font-serif text-2xl italic leading-snug text-[#c5a878] sm:text-3xl lg:text-4xl">
-                  Trusted legal support at every stage .
+                  Trusted legal support at every stage 
                 </p>
               </div>
 
